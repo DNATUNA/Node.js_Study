@@ -36,6 +36,10 @@ db.Sequelize = Sequelize;
 
 //테이블 추가
 db.User = require('./user')(sequelize, Sequelize);
-db.Store = require('./store')(sequelize, Sequelize);
+db.Iteam = require('./iteam')(sequelize, Sequelize);
+
+//관계 설정
+db.User.hasMany(db.Iteam, { foreignKey: 'store_name', sourceKey: 'id' });
+db.Iteam.belongsTo(db.User, { foreignKey: 'store_name', targetKey: 'id'});
 
 module.exports = db;
