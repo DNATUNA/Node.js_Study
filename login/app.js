@@ -4,8 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// 라우터 연결해주는 곳
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/login');
+
+// sequelize 연동
+var { sequelize } = require('./models');
+sequelize.sync();
 
 //sequelize 연동
 var { sequelize } = require('./models/index');
@@ -26,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/comments', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
