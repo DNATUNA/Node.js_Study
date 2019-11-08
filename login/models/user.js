@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(20),
             allowNULL: false,
             unique: true,
-        },
+            primaryKey: true,
+        }, 
         passwd: {
             type: DataTypes.STRING(20),
             allowNULL: false,
@@ -26,10 +27,14 @@ module.exports = (sequelize, DataTypes) => {
             unique: false,
         },
         created_at: {
-
+            type: DataTypes.DATE,
+            allowNULLL: false,
+            defaultValue: sequelize.literal('now()'),
         },
         store_name:{
-
+            type: DataTypes.STRING(20),
+            allowNULL: false,
+            unique: false,
         }
     }, {
         timestamp: false,
