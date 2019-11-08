@@ -1,8 +1,12 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const logger = require('morgan');
+const passport = require('passport');
+const flash = require('connect-flash');
+require('dotenv').config();
 
 // 라우터 연결해주는 곳
 var indexRouter = require('./routes/index');
@@ -11,10 +15,6 @@ var loginRouter = require('./routes/login');
 
 // sequelize 연동
 var { sequelize } = require('./models');
-sequelize.sync();
-
-//sequelize 연동
-var { sequelize } = require('./models/index');
 sequelize.sync();
 
 //express 연동
@@ -27,8 +27,19 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cookieParser(process.env.COOKIE_SECRET));
+app.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: process.env.COOKIE_SECRET,
+  cookie: {
+    httpOnly: true,
+    secure: false,
+  },
+}));
+app.use(flash());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNULL: false,
             unique: true,
             primaryKey: true,
-        },
+        }, 
         passwd: {
             type: DataTypes.STRING(20),
             allowNULL: false,
@@ -28,8 +28,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         created_at: {
             type: DataTypes.DATE,
-            allowNULL: false,
-            defautlValue: sequelize.literal('now()'),
+            allowNULLL: false,
+            defaultValue: sequelize.literal('now()'),
         },
         store_name:{
             type: DataTypes.STRING(20),
