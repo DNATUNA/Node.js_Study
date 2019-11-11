@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "dnatuna",
+    "password": "zlekfl123!!",
+    "database": "nodejs",
+    "host": "106.10.32.130",
+    "port": "8812",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
