@@ -8,7 +8,7 @@
 - node_modules
 - package-lock.json
 - .env
-- login/config/config/json
+- login/config/config.json
 
 ### 사용 패키지
 - express : 미들웨어
