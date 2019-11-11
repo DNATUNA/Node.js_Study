@@ -23,4 +23,3 @@
 - pug
 - dotenv
 - connet-flash
-김건훈 바보
