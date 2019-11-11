@@ -5,7 +5,7 @@ html
     title= title
     meta(name='viewport' content='width=device-width, user-scalable=no')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    link(rel='stylesheet' href='/main.css')
+    link(rel='stylesheet' href='stylesheets/main.css')
   body
     .container
       .profile-wrap
@@ -24,11 +24,11 @@ html
           else
             form#login-form(action='/auth/login' method='post')
               .input-group
-                label(for='email') 이메일
-                input#email(type='email' name='email' required autofocus)
+                label(for='id') 아이디
+                input#nick(type='text' name='id' required autofocus)
               .input-group
-                label(for='password') 비밀번호
-                input#password(type='password' name='password' required)
+                label(for='passwd') 비밀번호
+                input#passwd(type='password' name='passwd' required)
               if loginError
                 .error-message= loginError
               a#join.btn(href='/join') 회원가입

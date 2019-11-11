@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define('iteam', {
-        iteam_name: {
+    return sequelize.define('item', {
+        item_name: {
             type: DataTypes.STRING(30),
             allowNULL: false,
             unique: false,
@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNULL: true,
             unique: false,
         },
+        item_img: {
+            type: DataTypes.STRING(140),
+            allowNULL: true,
+        },
         created_at: {
             type: DataTypes.DATE,
             allowNULL: false,
@@ -27,6 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         },
     },{
         timestamp: false,
+        paranoid: true,
         underscored: true,
     });
 };

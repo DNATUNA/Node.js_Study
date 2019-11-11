@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
         }, 
         passwd: {
-            type: DataTypes.STRING(20),
-            allowNULL: false,
+            type: DataTypes.STRING(100),
+            allowNULL: true,
             unique: false,
         },
         age: {
@@ -28,16 +28,26 @@ module.exports = (sequelize, DataTypes) => {
         },
         created_at: {
             type: DataTypes.DATE,
-            allowNULLL: false,
+            allowNULL: false,
             defaultValue: sequelize.literal('now()'),
         },
         store_name:{
             type: DataTypes.STRING(20),
             allowNULL: false,
             unique: true,
-        }
+        },
+        provider: {
+            type: DataTypes.STRING(10),
+            allowNULL: false,
+            defaultValue: "local",
+        },
+        snsId: {
+            type: DataTypes.STRING(30),
+            allowNULL: true,
+        },
     }, {
         timestamp: false,
+        paranoid: true,
         underscored: true,
     });
 };

@@ -16,9 +16,12 @@ block content
         label(for='join-age') 나이
         input#join-age(type='text' name='age')
       .input-group
-        label(for='join-age') 나이
-        input#join-age(type='text' name='age')
-        // 여기부터 추가 개발~
+        label(for='join-phone_num') 전화번호
+        input#join-phone_num(type='text' name='phone_num')
+      .input-group
+        label(for='join-store_name') 마켓 이름
+        input#join-store_name(type='text' name='store_name')
+
       if joinError
         .error-message= joinError
       button#join-btn.btn(type='submit') 회원가입
