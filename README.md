@@ -5,10 +5,10 @@
 ## login 기능 (2019.11.05 ~ )
 
 ### .gitignore
-node_modules
-package-lock.json
-.env
-login/config/config/json
+- node_modules
+- package-lock.json
+- .env
+- login/config/config/json
 
 ### 사용 패키지
 - express : 미들웨어
