@@ -24,10 +24,10 @@ html
           else
             form#login-form(action='/auth/login' method='post')
               .input-group
-                label(for='id') 아이디
-                input#nick(type='text' name='id' required autofocus)
+                label(for='join-id') 아이디
+                input#id(type='text' name='id' required autofocus)
               .input-group
-                label(for='passwd') 비밀번호
+                label(for='join-passwd') 비밀번호
                 input#passwd(type='password' name='passwd' required)
               if loginError
                 .error-message= loginError

@@ -8,7 +8,7 @@ block content
         input#join-name(type='text' name='name')
       .input-group
         label(for='join-id') 아이디
-        input#join-nick(type='text' name='id')
+        input#join-id(type='text' name='id')
       .input-group
         label(for='join-passwd') 비밀번호
         input#join-passwd(type='password' name='passwd')
@@ -21,7 +21,6 @@ block content
       .input-group
         label(for='join-store_name') 마켓 이름
         input#join-store_name(type='text' name='store_name')
-
       if joinError
         .error-message= joinError
       button#join-btn.btn(type='submit') 회원가입
