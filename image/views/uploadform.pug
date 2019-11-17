@@ -8,6 +8,6 @@ html
         //- action의 값으로는 form을 전송할 script 파일(app.js에서 app.use로 연결시켜준 라우터 주소)와 그 라우터 파일의 post로 지정해준 url을 적어준다.
         //- 여기서 전송된 데이터는 action값으로 적어준 script파일의 post에서 받는다.
         form(action = "/upload/submit" method = "post" enctype = "multipart/form-data")
-            input(type = "file", name = "userfile")
+            input(type = "file" multiple, name = "userfile")
             input(type = "submit", value = "파일 전송")
             
