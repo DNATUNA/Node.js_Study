@@ -9,7 +9,8 @@ const multer = require('multer');
 //라우터 연결시켜주는 곳
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const uploadRouter = require('./routes/upload');
+const uploadTestRouter = require('./routes/uploadtest');  //multer로 이미지 업로드 프로토타입 라우터
+const uploadRouter = require('./routes/upload');          //업로드 라우터
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // 주소를 통해서 라우터와 미들웨어를 연결시켜주는 곳(라우터 호출 주소)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/uploadtest', uploadTestRouter);
 app.use('/upload', uploadRouter);
 
 // catch 404 and forward to error handler
