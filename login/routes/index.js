@@ -23,6 +23,7 @@ router.get('/profile', isLoggedIn, (req, res) => {
 
 // 메인 페이지
 router.get('/', function(req, res, next) {
+  console.log(req.user);
   res.render('index', {
     title: '플리마켓',
     twits: [],
