@@ -1,5 +1,101 @@
 var uploadFiles = [];
 
+$(document).ready(function() {
+
+        
+            var $drop = $("#drop");
+
+            $drop.on("dragenter", function(e) { //드래그 요소가 들어왔을떄
+
+                $(this).css('background-color', '#ccf5ff');
+
+            }).on("dragleave", function(e) { //드래그 요소가 나갔을때
+
+                $(this).css('background-color', 'rgb(255, 248, 238);');
+
+            }).on("dragover", function(e) {
+
+                e.stopPropagation();
+
+                e.preventDefault();
+
+            }).on('drop', function(e) { //드래그한 항목을 떨어뜨렸을때
+                
+                $('.drop_caption').css('display', 'none');
+                e.preventDefault();
+                
+                //배경색을 원래대로 돌리고싶은데 동작을 안하네요..
+                $(this).css('background-color', 'rgb(255, 248, 238);');
+
+
+
+                var files = e.originalEvent.dataTransfer.files; //드래그&드랍 항목
+
+
+                for (var i = 0; i < files.length; i++) {
+
+                    var file = files[i];
+
+                    var size = uploadFiles.push(file); //업로드 목록에 추가
+
+                    preview(file, size - 1); //미리보기 만들기
+
+                }
+
+
+
+                $("#btnSubmit").on("click", function() {
+
+                    var formData = new FormData();
+
+                    $.each(uploadFiles, function(i, file) {
+
+                        if (file.upload != 'disable') //삭제하지 않은 이미지만 업로드 항목으로 추가
+
+                            formData.append('upload-file', file, file.name);
+
+                    });
+
+
+                    $.ajax({
+
+                        url: '/api/etc/file/upload',
+
+                        data: formData,
+
+                        type: 'post',
+
+                        contentType: false,
+
+                        processData: false,
+
+                        success: function(ret) {
+
+                            alert("완료");
+
+                        }
+
+                    });
+
+                });
+
+
+                $("#thumbnails").on("click", ".close", function(e) {
+
+                    var $target = $(e.target);
+
+                    var idx = $target.attr('data-idx');
+
+                    uploadFiles[idx].upload = 'disable'; //삭제된 항목은 업로드하지 않기 위해 플래그 생성
+
+                    $target.parent().remove(); //프리뷰 삭제
+                    
+                    if($('#thumbnails').children().length == 0)
+                        $('.drop_caption').css('display', 'block');
+                });
+            });
+        });
+
 
 //프리뷰 생성 함수
 function preview(file, idx) {
