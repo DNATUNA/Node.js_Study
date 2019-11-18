@@ -11,7 +11,7 @@ html
       .profile-wrap
         .profile
           if user && user.id
-            .user-name= '안녕하세요! ' + user.nick + '님'
+            .user-name= '안녕하세요! ' + user.name + '님'
             .half
               div 팔로잉
               .count.following-count= user.Followings && user.Followings.length || 0

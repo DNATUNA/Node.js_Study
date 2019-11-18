@@ -20,6 +20,7 @@ router.post('/join', isNotLoggedIn, async (req, res, next) => {
             name,
             id,
             passwd: hash,
+            email,
             age,
             phone_num,
             store_name,
@@ -57,5 +58,14 @@ router.get('/logout', isLoggedIn, (req, res) => {
     req.session.destroy();
     res.redirect('/');
 })
+
+//kakao login
+router.get('/kakao/', passport.authenticate('kakao'));
+
+router.get('/kakao/callback', passport.authenticate('kakao', {
+    failureRedirect: '/',
+}), (req, res) => {
+    res.redirect('/');
+});
 
 module.exports = router;
