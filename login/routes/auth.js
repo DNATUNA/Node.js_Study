@@ -1,7 +1,8 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-const requset = require('request');
+const axios = require('axios');
+
 
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
 const { User } = require('../models');
@@ -56,24 +57,17 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
 
 router.get('/logout', isLoggedIn, (req, res) => {
     if (req.user.dataValues.provider == 'kakao'){
-        let option = {
-            uri: 'http://kapi.kakao.com/v1/user/unlink',
-            method: 'POST',
-            headers: `Authorization: Bearer ${req.user.dataValues.token}`,
-        }
-        requset(option, (error, respons, body) => {
-            if (error){
-                console.error(error);
-                return next(error);
-            } else {
-                console.log("카톡 리퀘스트로 됨!!");
+        axios.post('https://kapi.kakao.com/v1/user/logout', {}, { headers: { 'Authorization': `Bearer ${req.user.dataValues.token}` }})
+            .then((response) => {
                 req.logout();
                 req.session.destroy();
-                res.redirect('/'); 
-            }
-        });
+                res.redirect('/');   
+            })
+            .catch((error) => {
+                console.error(error);
+                return next(error);
+            });
     } else{
-        console.log("logout OK"+req.user.dataValues.token);
         req.logout();
         req.session.destroy();
         res.redirect('/');   
