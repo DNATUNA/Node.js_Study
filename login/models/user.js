@@ -47,6 +47,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNULL: true,
             unique: true,
         },
+        token: {
+            type: DataTypes.STRING(100),
+            allowNULL: true,
+            unique:false,
+        }
     }, {
         timestamp: false,
         paranoid: true,

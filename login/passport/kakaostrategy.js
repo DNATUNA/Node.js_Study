@@ -15,6 +15,12 @@ module.exports = (passport) => {
                 },
             });
             if (exUser) {
+                await exUser.update({
+                    token: accessToken,
+                }, { where: {
+                    id: profile.id,
+                    porvier: 'kakao',
+                }});
                 done(null, exUser);
             } else {
                 const newUser = await User.create({
@@ -22,6 +28,7 @@ module.exports = (passport) => {
                     id: profile.id,
                     email: profile._json && profile._json.kaccount_email,                    
                     provider: 'kakao',
+                    token: accessToken,
                 });
                 done(null, newUser);
             }
