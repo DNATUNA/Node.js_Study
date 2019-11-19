@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title #WE ARE HERE
+        link(rel='stylesheet' type='text/css' href='./stylesheets/resetCSS.css')
+        link(href='https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean' rel='stylesheet')
+        link(rel='stylesheet' type='text/css' href='./stylesheets/main_style.css')
+        script(src='http://code.jquery.com/jquery-3.1.1.js')
+        script(src='./javascripts/main_script.js' type='text/javascript')
+
+    body 
+        #wrap
+            .headbox
+                .inheadbox
+                    .logo 
+                        p #WE ARE HERE
+                    .search
+                        form
+                            input.test_button(onclick='addProduct(); return false;' type='button' value='데이터 추가')
+                            input.searchbox(type='text' name='search' value='')
+            #bodybox
+                .content
+        
+            
