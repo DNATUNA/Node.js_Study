@@ -8,7 +8,7 @@ const { User } = require('../models');
 const router = express.Router();
 
 router.post('/join', isNotLoggedIn, async (req, res, next) => {
-    const { name, id, passwd, age, phone_num, store_name} = req.body;
+    const { name, id, passwd, email, age, phone_num, store_name} = req.body;
     try {
         const exUser = await User.findOne({ where: { id } });
         if (exUser) {
@@ -57,6 +57,7 @@ router.get('/logout', isLoggedIn, (req, res) => {
     req.logout();
     req.session.destroy();
     res.redirect('/');
+    
 })
 
 //kakao login
