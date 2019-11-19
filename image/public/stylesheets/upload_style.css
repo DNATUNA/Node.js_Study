@@ -11,7 +11,7 @@ textarea {
   border: 1px solid #bfbfbf;
   border-radius: 7px;
   margin-bottom: 20px;
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   padding: 5px 10px;
 }
 
@@ -73,7 +73,6 @@ textarea:focus {
   height: 180px;
   padding: 10px;
   display: inline-block;
-  background-color: ;
   vertical-align: top;
 }
 
@@ -105,15 +104,16 @@ textarea:focus {
 
 .upload {
   float: right;
-  margin-right: 20px;
+  margin-right: 35px;
   height: 35px;
   width: 120px;
   background-color: #ff9900;
   border-radius: 70px;
   color: white;
   font-size: 23px;
-  line-height: 35px;
-  text-align: center;
+  border: 0px;
+  margin-top: 30px;
+  font-family: inherit;
 }
 
 .upload:hover {
