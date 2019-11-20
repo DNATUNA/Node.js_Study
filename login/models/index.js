@@ -39,6 +39,7 @@ db.User = require('./user')(sequelize, Sequelize);
 db.Item = require('./item')(sequelize, Sequelize);
 db.Hashtag = require('./hashtag')(sequelize, Sequelize);
 
+
 //관계 설정
 db.User.hasMany(db.Item, { foreignKey: 'store_name', sourceKey: 'id' });
 db.Item.belongsTo(db.User, { foreignKey: 'store_name', targetKey: 'id'});

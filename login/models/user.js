@@ -16,14 +16,19 @@ module.exports = (sequelize, DataTypes) => {
             allowNULL: true,
             unique: false,
         },
+        email: {
+            type: DataTypes.STRING(30),
+            allowNULL: false,
+            unique:true,
+        },
         age: {
             type: DataTypes.INTEGER(2).UNSIGNED,
-            allowNULL: false,
+            allowNULL: true,
             unique: false,
         },
         phone_num: {
             type: DataTypes.INTEGER(12).UNSIGNED,
-            allowNULL: false,
+            allowNULL: true,
             unique: true,
         },
         created_at: {
@@ -31,20 +36,22 @@ module.exports = (sequelize, DataTypes) => {
             allowNULL: false,
             defaultValue: sequelize.literal('now()'),
         },
-        store_name:{
-            type: DataTypes.STRING(20),
-            allowNULL: false,
-            unique: true,
-        },
         provider: {
             type: DataTypes.STRING(10),
-            allowNULL: false,
-            defaultValue: "local",
+            allowNUUL: false,
+            default: 'local',
+            unique: false,
         },
-        snsId: {
-            type: DataTypes.STRING(30),
+        store_name:{
+            type: DataTypes.STRING(20),
             allowNULL: true,
+            unique: true,
         },
+        token: {
+            type: DataTypes.STRING(100),
+            allowNULL: true,
+            unique:false,
+        }
     }, {
         timestamp: false,
         paranoid: true,
