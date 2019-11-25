@@ -25,18 +25,24 @@ html
                     form(action = "/upload" method = "post" enctype = "multipart/form-data").uploadform
                         .form_line
                             .form_caption 제목
-                            input(name = 'userfile').form_title
+                            input(name = 'title' type = "text").form_title
                         .form_line
                             .form_caption 가격
-                            input(name = 'userfile').form_price
+                            input(name = 'price' type = "text").form_price
                         .form_line
                             .form_caption 내용
-                            textarea(name = 'userfile').form_description
+                            textarea(name = 'content').form_description
                         .form_line
                             .form_caption 태그
-                            input(name = 'userfile').form_tag
+                            input(name = 'tag' type = "text").form_tag
 
                         #drop
-                            p.drop_caption 파일을 끌어와서 올리기
+                            input(type = "file" multiple name = "userfile").drop_caption 
+                            p.drop_caption 파일을 끌어와서 올리기 
+                            //- input(type = "file" multiple, name = "userfile").drop_caption 
                             #thumbnails
-                        button.upload Upload
+
+                        //- 여기 부분이 원래 button이였는데 서버로 제출하기 위해서 input으로 바꾸고 type값을 submit으로 했습니다.
+                        input(type = 'submit' value = 'Upload').upload 
+                        | 
+                    

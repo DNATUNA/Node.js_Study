@@ -22,8 +22,8 @@ router.get('/', function (req, res, next) {
 
 // 최대 10개 파일을 한번에 보낼 수 있음
 router.post('/submit', upload.array('userfile',10), function (req, res, next) {
-    //console.log(req.file);
-    res.render('imgshow');
+    console.log(req.file+"안녕");
+    //res.redirect('/');
 });
 
 module.exports = router;
