@@ -1,6 +1,8 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const axios = require('axios');
+
 
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
 const { User } = require('../models');
@@ -8,7 +10,7 @@ const { User } = require('../models');
 const router = express.Router();
 
 router.post('/join', isNotLoggedIn, async (req, res, next) => {
-    const { name, id, passwd, age, phone_num, store_name} = req.body;
+    const { name, id, passwd, email, age, phone_num, store_name} = req.body;
     try {
         const exUser = await User.findOne({ where: { id } });
         if (exUser) {
@@ -20,6 +22,7 @@ router.post('/join', isNotLoggedIn, async (req, res, next) => {
             name,
             id,
             passwd: hash,
+            email,
             age,
             phone_num,
             store_name,
@@ -53,9 +56,31 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
 });
 
 router.get('/logout', isLoggedIn, (req, res) => {
-    req.logout();
-    req.session.destroy();
-    res.redirect('/');
+    if (req.user.dataValues.provider == 'kakao'){
+        axios.post('https://kapi.kakao.com/v1/user/logout', {}, { headers: { 'Authorization': `Bearer ${req.user.dataValues.token}` }})
+            .then((response) => {
+                req.logout();
+                req.session.destroy();
+                res.redirect('/');   
+            })
+            .catch((error) => {
+                console.error(error);
+                return next(error);
+            });
+    } else{
+        req.logout();
+        req.session.destroy();
+        res.redirect('/');   
+    }    
 })
+
+//kakao login
+router.get('/kakao/', passport.authenticate('kakao'));
+
+router.get('/kakao/callback', passport.authenticate('kakao', {
+    failureRedirect: '/',
+}), (req, res) => {
+    res.redirect('/');
+});
 
 module.exports = router;
