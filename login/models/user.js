@@ -12,32 +12,49 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
         }, 
         passwd: {
-            type: DataTypes.STRING(20),
-            allowNULL: false,
+            type: DataTypes.STRING(100),
+            allowNULL: true,
             unique: false,
+        },
+        email: {
+            type: DataTypes.STRING(30),
+            allowNULL: false,
+            unique:true,
         },
         age: {
             type: DataTypes.INTEGER(2).UNSIGNED,
-            allowNULL: false,
+            allowNULL: true,
             unique: false,
         },
         phone_num: {
             type: DataTypes.INTEGER(12).UNSIGNED,
-            allowNULL: false,
+            allowNULL: true,
             unique: true,
         },
         created_at: {
             type: DataTypes.DATE,
-            allowNULLL: false,
+            allowNULL: false,
             defaultValue: sequelize.literal('now()'),
+        },
+        provider: {
+            type: DataTypes.STRING(10),
+            allowNUUL: false,
+            default: 'local',
+            unique: false,
         },
         store_name:{
             type: DataTypes.STRING(20),
-            allowNULL: false,
+            allowNULL: true,
             unique: true,
+        },
+        token: {
+            type: DataTypes.STRING(100),
+            allowNULL: true,
+            unique:false,
         }
     }, {
         timestamp: false,
+        paranoid: true,
         underscored: true,
     });
 };

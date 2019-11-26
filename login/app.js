@@ -9,21 +9,24 @@ const flash = require('connect-flash');
 require('dotenv').config();
 
 // 라우터 연결해주는 곳
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/login');
+const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth');
+const usersRouter = require('./routes/users');
 
-// sequelize 연동
-var { sequelize } = require('./models');
+// 각종 연동 부분
+const { sequelize } = require('./models');
+const passportConfig = require('./passport');
+
+// 연동한 것들 실행 부분
+const app = express();
 sequelize.sync();
-
-//express 연동
-var app = express();
+passportConfig(passport);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// 미들웨어 설정
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -40,10 +43,12 @@ app.use(session({
   },
 }));
 app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', indexRouter);
+app.use('/auth', authRouter);
 app.use('/users', usersRouter);
-app.use('/comments', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -40,7 +40,14 @@ router.post('/', upload.array('userfile',10), function (req, res, next) {
   //res.redirect('/detailview');  // redirect는 절대 주소.
   //res.send(title);
   
+<<<<<<< HEAD
   
+=======
+  //console.log(title + " " + price + " " + content + " " + tag);
+  //var imgPath = req.file.path;
+  //console.log(imgPath);
+  res.redirect('/');  // redirect는 절대 주소이다.
+>>>>>>> f4e330cc67e86ff1c0c0a87059956a73bb10dd05
 });
 
 module.exports = router;

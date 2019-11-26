@@ -36,10 +36,15 @@ db.Sequelize = Sequelize;
 
 //테이블 추가
 db.User = require('./user')(sequelize, Sequelize);
-db.Iteam = require('./iteam')(sequelize, Sequelize);
+db.Item = require('./item')(sequelize, Sequelize);
+db.Hashtag = require('./hashtag')(sequelize, Sequelize);
+
 
 //관계 설정
-db.User.hasMany(db.Iteam, { foreignKey: 'store_name', sourceKey: 'id' });
-db.Iteam.belongsTo(db.User, { foreignKey: 'store_name', targetKey: 'id'});
+db.User.hasMany(db.Item, { foreignKey: 'store_name', sourceKey: 'id' });
+db.Item.belongsTo(db.User, { foreignKey: 'store_name', targetKey: 'id'});
+
+db.Item.belongsToMany(db.Hashtag, { through: 'ItemHashtag' });
+db.Hashtag.belongsToMany(db.Item, { through: 'ItemHashtag' });
 
 module.exports = db;
