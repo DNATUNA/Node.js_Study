@@ -2,7 +2,8 @@ var uploadFiles = [];
 
 $(document).ready(function() {
 
-        
+            
+
             var $drop = $("#drop");
 
             $drop.on("dragenter", function(e) { //드래그 요소가 들어왔을떄
@@ -61,7 +62,7 @@ $(document).ready(function() {
 
                         url: 'http://127.0.0.1:3000/upload',
 
-                        data: 'json',
+                        data: 'formData',
 
                         type: 'post',
 

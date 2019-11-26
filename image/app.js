@@ -12,7 +12,7 @@ var mainRouter = require('./routes/main');
 var usersRouter = require('./routes/users');
 const uploadTestRouter = require('./routes/uploadtest');  //multer로 이미지 업로드 프로토타입 라우터
 const uploadRouter = require('./routes/upload');          //업로드 라우터
-const detailRouter = require('./routes/detailtest');          //업로드 라우터
+const detailRouter = require('./routes/detailview');          //업로드 라우터
 
 var app = express();
 
@@ -45,7 +45,7 @@ app.use('/', mainRouter);
 app.use('/users', usersRouter);
 app.use('/uploadtest', uploadTestRouter);
 app.use('/upload', uploadRouter);
-app.use('/detailtest', detailRouter);
+app.use('/detailview', detailRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
