@@ -9,6 +9,7 @@ html
         link(rel='stylesheet' href='./stylesheets/upload_style.css' type='text/css')
         script(src='http://code.jquery.com/jquery-3.1.1.js')
         script(src='./javascripts/upload_script.js')
+        
 
     body 
         #wrap
@@ -37,9 +38,9 @@ html
                             input(name = 'tag' type = "text").form_tag
 
                         #drop
+                            //- 초히가 파일 드래그 앤 드롭 부분을 input으로 일단 바꿔놓음.
                             input(type = "file" multiple name = "userfile").drop_caption 
                             p.drop_caption 파일을 끌어와서 올리기 
-                            //- input(type = "file" multiple, name = "userfile").drop_caption 
                             #thumbnails
 
                         //- 여기 부분이 원래 button이였는데 서버로 제출하기 위해서 input으로 바꾸고 type값을 submit으로 했습니다.
