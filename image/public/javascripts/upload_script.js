@@ -59,9 +59,9 @@ $(document).ready(function() {
 
                     $.ajax({
 
-                        url: '/api/etc/file/upload',
+                        url: 'http://127.0.0.1:3000/upload',
 
-                        data: formData,
+                        data: 'json',
 
                         type: 'post',
 
