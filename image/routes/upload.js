@@ -37,7 +37,6 @@ router.post('/', upload.array('userfile',10), function (req, res, next) {
   //var imgPath = req.file.path;
   //console.log(imgPath);
   res.redirect('/');  // redirect는 절대 주소이다.
-  
 });
 
 module.exports = router;
