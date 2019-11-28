@@ -1,0 +1,120 @@
+.loginbox {
+    width: 380px;
+    height: 580px;
+    padding: 30px 60px;
+    border: 1px solid #bfbfbf;
+    border-radius: 7px;
+    margin-left: 229px;
+    margin-top: 100px;
+    background-color: white;
+}
+
+.signin {
+    text-align: center;
+    font-style: italic;
+    font-size: 25px;
+    height: 100px;
+    line-height: 35px;
+    border-bottom: 1px solid #bfbfbf;
+    margin-bottom: 30px;
+}
+
+.id_pwd {
+    height: 100px;
+    padding: 20px 0;
+}
+
+.id_pwd > input {
+    display: block;
+    border-radius: 8px;
+    border: 1px solid #bfbfbf;
+    width: 340px;
+    height: 30px;
+    margin-bottom: 20px;
+    padding: 5px 20px
+}
+
+.id_pwd > input:focus,
+textarea:focus {
+    background-color: white;
+    border: 2px solid #ff9900;
+    box-shadow: 0px 0px 4px 1px #ff9900;
+
+}
+
+.signin_botton {
+    height: 25px;
+    margin-bottom: 20px;
+    float: right;
+    height: 25px;
+    width: 90px;
+    background-color: #ff9900;
+    border-radius: 70px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 0px;
+    font-family: inherit;
+}
+
+.signin_botton:hover {
+    box-shadow: 0px 0px 2px 1px #cbcbcb;
+}
+
+.signin_botton > div {
+    
+}
+
+.snsbox {
+    height: 220px;
+    padding: 20px 0;
+}
+
+.snsbox > a {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 0px 20px;
+    border: 0;
+    font-family: inherit;
+}
+
+.snsbox > a:hover {
+    box-shadow: 0px 0px 2px 1px #cbcbcb;
+}
+
+.snsbox img {
+    width: 30px;
+    width: 30px;
+    position: absolute;
+    padding-left: 20px;
+    padding-top: 5px;
+    transform: translateX(-40px);
+}
+
+.kakao {
+    background-color: #fae100;
+}
+
+.facebook {
+    background-color: #3a5ca9;
+    color: white;
+}
+
+.facebook>img {
+    transform: translateX(-138px);
+}
+
+.google {
+    background-color: #f53e28;
+    color: white;
+}
+
+.google>img {
+    transform: translateX(-152px);
+}
