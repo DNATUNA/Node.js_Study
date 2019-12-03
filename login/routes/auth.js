@@ -68,14 +68,20 @@ router.get('/logout', isLoggedIn, (req, res) => {
                 return next(error);
             });
     } else{
-        req.logout();
-        req.session.destroy();
+        req.session.destroy(() => {
+            if(err){
+                console.error(err);
+                return next(err);
+            }
+            req.logout();
+            res.sendStatus(200);
+        });
         res.redirect('/');   
     }    
 })
 
-//kakao login
-router.get('/kakao/', passport.authenticate('kakao'));
+// kakao login
+router.get('/kakao', passport.authenticate('kakao'));
 
 router.get('/kakao/callback', passport.authenticate('kakao', {
     failureRedirect: '/',
