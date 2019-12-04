@@ -145,44 +145,15 @@ body {
     margin-right: 25px;
 }
 
-.product {
-
+/* .product {
     width: 206px;
     height: 200px;
     background-color: burlywood;
-}
-
-.searchbox:hover {
-    box-shadow: 1px 1px 2px 1px #e2e2e2;
-}
-
-.content {
-    width: 899px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 20px 0px;
-}
-
-.row_product {
-    display: block;
-    background-color: aqua;
-    height: 225px;
-}
-
-.col_product {
-    float: left;
-    background-color: cornsilk;
-    height: 200px;
-    width: 206px;
-    margin-right: 25px;
-=======
-
-}
-
-.product {
+} */
 
 
-    width: 206px;
-    height: 200px;
-    background-color: burlywood;
-}
+
+
+
+
+

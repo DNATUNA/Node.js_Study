@@ -37,12 +37,6 @@ router.post('/', upload.array('userfile',10), function (req, res, next) {
   
   console.log(title + " " + price + " " + content + " " + tag);
   res.render('detail_view', req.body);
-  //res.redirect('/detailview');  // redirect는 절대 주소.
-  //res.send(title);
-  
-  //console.log(title + " " + price + " " + content + " " + tag);
-  //var imgPath = req.file.path;
-  //console.log(imgPath);
   res.redirect('/');  // redirect는 절대 주소이다.
 
 });
