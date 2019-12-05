@@ -23,10 +23,6 @@ body {
     box-sizing: border-box;
 }
 
-a {
-    padding: 5px;
-}
-
 #bodybox {
     width: 1150px;
     margin: 0 auto;
@@ -39,7 +35,6 @@ a {
     height: 100px;
     box-sizing: border-box;
     padding: 15px 15px;
-    vertical-align: bottom;
 }
 
 .logo p {
@@ -63,7 +58,66 @@ a {
     background-color: #f7f7f7;
     border: 1px solid #bfbfbf;
     padding: 0 25px;
-    margin-bottom: 10px;
+}html,
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+}
+
+#wrap {
+    margin: 0 0;
+    width: 100%;
+}
+
+.headbox {
+    border-bottom: 1px solid #bfbfbf;
+    box-sizing: border-box;
+    height: 100px;
+}
+
+.inheadbox {
+    width: 1150px;
+    margin: 0 auto;
+    height: 100px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+#bodybox {
+    width: 1150px;
+    margin: 0 auto;
+    background-color: #fafafa;
+}
+
+.logo {
+    display: inline-block;
+    width: 300px;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 15px 15px;
+}
+
+.logo p {
+    font-style: italic;
+    font-size: 30;
+}
+
+.search {
+    text-align: right;
+    display: inline-block;
+    width: 800px;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 15px 15px;
+}
+
+.searchbox {
+    width: 500px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #bfbfbf;
+    padding: 0 25px;
 }
 
 .searchbox:hover {
@@ -79,25 +133,20 @@ a {
 
 .row_product {
     display: block;
+    background-color: aqua;
     height: 225px;
 }
 
 .col_product {
     float: left;
+    background-color: cornsilk;
     height: 200px;
     width: 206px;
     margin-right: 25px;
-    
 }
 
-.product {
-    position:relative;
+/* .product {
     width: 206px;
     height: 200px;
-}
-
-.product>img {
-    position:absolute;
-   margin:auto;
-            top:0; bottom:0; left:0; right:0;
-}
+    background-color: burlywood;
+} */

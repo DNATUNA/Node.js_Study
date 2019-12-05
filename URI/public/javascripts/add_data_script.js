@@ -1,6 +1,8 @@
 var COL_LENGTH = 4; //한 행에 들어갈 상품 수
+//window.location.reload()
 
 var addProduct = function ($target_div, productData) { //상품 추가하는 함수
+
     //현재 페이지에 있는 상품 행의 개수를 검사
     var numOfChildren = $target_div.children().length;
 
@@ -40,14 +42,17 @@ var addProduct = function ($target_div, productData) { //상품 추가하는 함
 //열을 추가하는 함수
 var makeColProduct = function ($parent_row_product, productData) {
     //열과 상품 요소를 생성
-    var $col_product = $("<div></div>");
+    var $col_product = $("<img></img>");
     var $product = $("<div></div>");
-    var $productImg = $("<img>");
+    var $productImg = $("<img></img>");
 
     //클래스 연결
-    $col_product.addClass("col_product");
-    $product.addClass("product");
-    $productImg.attr("src", productData/*.src*/);
+    //$col_product.addClass("col_product");
+    //$product.addClass("product");
+    $col_product.addClass("col_product").attr({
+        src: productData,
+        style: "width: 206px; height:200px"
+    });
 
     //네 번째 상품이면 오른쪽 마진을 없앤다
     if ($parent_row_product.children().length == COL_LENGTH - 1) {
@@ -56,11 +61,11 @@ var makeColProduct = function ($parent_row_product, productData) {
 
     }
     //요소 연결
-    $product.append($productImg);
-    $col_product.append($product);
+    //$product.append($productImg);
+    //$col_product.append($product);
     $parent_row_product.append($col_product);
     
-    resize($productImg, 206, 200);
+    //resize($productImg, 300, 300);
 }
 
 //열을 만드는 함수

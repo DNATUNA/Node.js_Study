@@ -1,7 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
+const { Item, User } = require('../models');
 /* GET home page. */
 
 // 회원가입 페이지
@@ -24,11 +25,25 @@ router.get('/profile', isLoggedIn, (req, res) => {
 // 메인 페이지
 router.get('/', function(req, res, next) {
   console.log(req.user);
-  res.render('main', {
-    title: 'WeAreHere 중고 & 플리마켓 SNS',
-    twits: [],
-    user: req.user,
+  Item.findAll({
+    include: {
+      model: User,
+      attributes: ['user_id', 'name'],
+    },
+  })
+  .then((posts) => {
+    res.render('main', {
+      title: 'WeAreHere 중고 & 플리마켓 SNS',
+      posts: posts,
+      user: req.user,
     });
+    console.log(posts);
+  })
+  .catch((error) => {
+    console.error(error);
+    next(error);
+  });
+  
 });
 
 module.exports = router;
