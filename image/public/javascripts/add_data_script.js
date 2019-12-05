@@ -42,18 +42,16 @@ var addProduct = function ($target_div, productData) { //상품 추가하는 함
 //열을 추가하는 함수
 var makeColProduct = function ($parent_row_product, productData) {
     //열과 상품 요소를 생성
+    var $col_link = $("<a href=''></a>");
     var $col_product = $("<img></img>");
-    var $product = $("<div></div>");
-    var $productImg = $("<img></img>");
+    //var $product = $("<div></div>");
+    //var $productImg = $("<img></img>");
 
     //클래스 연결
     //$col_product.addClass("col_product");
     //$product.addClass("product");
-    $col_product.addClass("col_product").attr({
-        src: productData,
-        style: "width: 206px; height:200px"
-    });
-
+    $col_product.addClass("col_product").attr("src", productData);
+   
     //네 번째 상품이면 오른쪽 마진을 없앤다
     if ($parent_row_product.children().length == COL_LENGTH - 1) {
         $col_product.css("margin-right", "0px");
@@ -63,7 +61,9 @@ var makeColProduct = function ($parent_row_product, productData) {
     //요소 연결
     //$product.append($productImg);
     //$col_product.append($product);
-    $parent_row_product.append($col_product);
+    
+     $col_link.append($col_product);
+    $parent_row_product.append($col_link);
     
     //resize($productImg, 300, 300);
 }
@@ -74,4 +74,3 @@ var makeRowProduct = function ($target_div) {
     $row_product.addClass("row_product");
     $target_div.append($row_product);
 }
-
