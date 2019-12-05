@@ -1,10 +1,14 @@
 var COL_LENGTH = 4; //한 행에 들어갈 상품 수
 //window.location.reload()
 
-var addProduct = function ($target_div, productData) { //상품 추가하는 함수
+
+// 건훈이가 주는 디테일 URL 뒤에 idArray로 받은 id 값을 붙여서 a 태그 링크로 걸자. 
+var addProduct = function ($target_div, productData, idArray) { //상품 추가하는 함수
 
     //현재 페이지에 있는 상품 행의 개수를 검사
     var numOfChildren = $target_div.children().length;
+
+    console.log("id 값입니다~ " + idArray);
 
     console.log("content has " + numOfChildren + " rows");
 

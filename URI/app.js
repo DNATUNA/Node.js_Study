@@ -51,8 +51,8 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/upload', uploadRouter);
-app.use('/image', express.static('uploads'));
-// 이미지 url 주소 예시 ) 127.0.0.1:3000/image/chohee.jpg
+app.use('/img', express.static('uploads'));
+// 이미지 url 주소 예시 ) 127.0.0.1:3000/img/chohee.jpg
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

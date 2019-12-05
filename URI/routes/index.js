@@ -37,7 +37,6 @@ router.get('/', function(req, res, next) {
       posts: posts,
       user: req.user,
     });
-    console.log(posts);
   })
   .catch((error) => {
     console.error(error);
