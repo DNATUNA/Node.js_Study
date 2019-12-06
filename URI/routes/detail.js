@@ -19,6 +19,7 @@ router.get('/:id', (req, res, next) => {
         },
     })
     .then((posts) => {
+        // 여기 main을 detail_view로 바꾸면 왜 css랑 javascript가 안먹히는지 모르겠음~~~ 김건똥은 계속 메이플만함~~ 난 자야겠다ㅏㅏ
         res.render('main', {
             title: '상품 정보 - WeAreHere 중고 & 플리마켓 SNS',
             posts: posts,
