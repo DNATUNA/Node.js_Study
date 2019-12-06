@@ -1,14 +1,22 @@
 var COL_LENGTH = 4; //한 행에 들어갈 상품 수
-//window.location.reload()
+var detailUrl = "";
 
 
 // 건훈이가 주는 디테일 URL 뒤에 idArray로 받은 id 값을 붙여서 a 태그 링크로 걸자. 
 var addProduct = function ($target_div, productData, idArray) { //상품 추가하는 함수
 
+    // 디테일 페이지 URL를 detailUrl변수에 저장.
+    detailUrl = "http://127.0.0.1:3000/detail/" + idArray;
+    
+    console.log("디테일 URL 입니다.");
+    console.log(detailUrl);
+    
     //현재 페이지에 있는 상품 행의 개수를 검사
     var numOfChildren = $target_div.children().length;
 
     console.log("id 값입니다~ " + idArray);
+
+    console.log("product 값입니다~ " + productData);
 
     console.log("content has " + numOfChildren + " rows");
 
@@ -47,27 +55,33 @@ var addProduct = function ($target_div, productData, idArray) { //상품 추가�
 var makeColProduct = function ($parent_row_product, productData) {
     //열과 상품 요소를 생성
     var $col_product = $("<img></img>");
-    var $product = $("<div></div>");
+    var $container = $("<a></a>");  //썸네일 이미지를 감싸는 a태그.
     var $productImg = $("<img></img>");
 
     //클래스 연결
     //$col_product.addClass("col_product");
     //$product.addClass("product");
+
+    // 썸네일 이미지를 감싸는 a태그에 href속성을 설정해준다.
+    $container.attr("href", detailUrl);
+
     $col_product.addClass("col_product").attr({
         src: productData,
         style: "width: 206px; height:200px"
     });
 
+    $container.append($col_product)
+
     //네 번째 상품이면 오른쪽 마진을 없앤다
     if ($parent_row_product.children().length == COL_LENGTH - 1) {
-        $col_product.css("margin-right", "0px");
+        $container.css("margin-right", "0px");
         console.log("last row has " + $parent_row_product.children().length + " cols. we need no margin col.");
 
     }
     //요소 연결
     //$product.append($productImg);
     //$col_product.append($product);
-    $parent_row_product.append($col_product);
+    $parent_row_product.append($container);
     
     //resize($productImg, 300, 300);
 }
@@ -77,4 +91,8 @@ var makeRowProduct = function ($target_div) {
     var $row_product = $("<div></div>")
     $row_product.addClass("row_product");
     $target_div.append($row_product);
+}
+
+var test = function(){
+    alert('하이');
 }
