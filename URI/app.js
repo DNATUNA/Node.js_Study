@@ -13,6 +13,7 @@ const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const usersRouter = require('./routes/users');
 const uploadRouter = require('./routes/upload');
+const detailRouter = require('./routes/detail');
 
 // 각종 연동 부분
 const { sequelize } = require('./models');
@@ -51,6 +52,7 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/upload', uploadRouter);
+app.use('/detail', detailRouter);
 app.use('/img', express.static('uploads'));
 // 이미지 url 주소 예시 ) 127.0.0.1:3000/img/chohee.jpg
 
