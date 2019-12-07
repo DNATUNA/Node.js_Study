@@ -1,36 +1,34 @@
 const express = require('express');
 const router = express.Router();
 
-const { Item, User } = require('../models');
+const { Item, User, Hashtag } = require('../models');
 /* GET home page. */
 
 // 디테일 메인 페이지
-router.get('/:id', (req, res, next) => {
-
+router.get('/:id', async(req, res, next) => {
     let id = req.params.id;
-
-    Item.findOne({
-        include: {
-            model: User,
-            attributes: ['user_id', 'name'],
-        },
-        where: {
-            id
-        },
-    })
-    .then((posts) => {
-        // 여기 main을 detail_view로 바꾸면 왜 css랑 javascript가 안먹히는지 모르겠음~~~ 김건똥은 계속 메이플만함~~ 난 자야겠다ㅏㅏ
-        res.render('main', {
+    try{
+        const item = await Item.findOne({
+            include: {
+                model: User,
+                attributes: ['user_id', 'name', 'phone_num'],
+            },
+            where: {
+                id
+            },
+        });
+        let hashs = [];
+        hashs = await item.getHashtags();
+        res.render('detail_view', {
             title: '상품 정보 - WeAreHere 중고 & 플리마켓 SNS',
-            posts: posts,
+            posts: item,
+            hashs: hashs,
             user: req.user,
         });
-    })
-    .catch((error) => {
+    } catch {
         console.error(error);
         next(error);
-    });
-  
+    }
 });
 
 module.exports = router;
