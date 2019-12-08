@@ -59,9 +59,15 @@ router.get('/logout', isLoggedIn, (req, res) => {
     if (req.user.dataValues.provider == 'kakao'){
         axios.post('https://kapi.kakao.com/v1/user/logout', {}, { headers: { 'Authorization': `Bearer ${req.user.dataValues.token}` }})
             .then((response) => {
-                req.logout();
-                req.session.destroy();
-                res.redirect('/');   
+                req.session.destroy(() => {
+                    if(err){
+                        console.error(err);
+                        return next(err);
+                    }
+                    req.logout();
+                    res.sendStatus(200);
+                    res.redirect('/');
+                }); 
             })
             .catch((error) => {
                 console.error(error);
@@ -75,8 +81,8 @@ router.get('/logout', isLoggedIn, (req, res) => {
             }
             req.logout();
             res.sendStatus(200);
-        });
-        res.redirect('/');   
+            res.redirect('/');
+        });  
     }    
 })
 
