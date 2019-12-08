@@ -1,51 +1,60 @@
-// 모듈 로드하는 곳
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const logger = require('morgan');
-const multer = require('multer');
+const passport = require('passport');
+const flash = require('connect-flash');
+require('dotenv').config();
 
-//라우터 연결시켜주는 곳
-var mainRouter = require('./routes/main');
-var usersRouter = require('./routes/users');
-const uploadTestRouter = require('./routes/uploadtest');  //multer로 이미지 업로드 프로토타입 라우터
-const uploadRouter = require('./routes/upload');          //업로드 라우터
-const detailRouter = require('./routes/detailview');          //업로드 라우터
+// 라우터 연결해주는 곳
+const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth');
+const usersRouter = require('./routes/users');
+const uploadRouter = require('./routes/upload');
+const detailRouter = require('./routes/detail');
 
-var app = express();
+// 각종 연동 부분
+const { sequelize } = require('./models');
+const passportConfig = require('./passport');
+
+// 연동한 것들 실행 부분
+const app = express();
+sequelize.sync();
+passportConfig(passport);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// express 환경설정
+// 미들웨어 설정
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use('/img', express.static('uploads')); // 이미지 url 주소 예시 ) 127.0.0.1:3000/img/chohee.jpg
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(cookieParser('sdfsdfsdf'));
+app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(session({
   resave: false,
   saveUninitialized: false,
-  secret: 'sdfsdfsdf',
+  secret: process.env.COOKIE_SECRET,
   cookie: {
     httpOnly: true,
     secure: false,
   },
 }));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-// 주소를 통해서 라우터와 미들웨어를 연결시켜주는 곳(라우터 호출 주소)
-app.use('/', mainRouter);
+app.use('/', indexRouter);
+app.use('/auth', authRouter);
 app.use('/users', usersRouter);
-app.use('/uploadtest', uploadTestRouter);
 app.use('/upload', uploadRouter);
-app.use('/detailview', detailRouter);
+app.use('/detail', detailRouter);
+app.use('/img', express.static('uploads'));
+// 이미지 url 주소 예시 ) 127.0.0.1:3000/img/chohee.jpg
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
