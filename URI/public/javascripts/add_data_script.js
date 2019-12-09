@@ -1,4 +1,4 @@
-var COL_LENGTH = 4; //한 행에 들어갈 상품 수
+var COL_LENGTH = 5; //한 행에 들어갈 상품 수
 var detailUrl = ""; //디테일 페이지 URL 주소
 
 
@@ -47,11 +47,8 @@ var makeColProduct = function ($parent_row_product, productData) {
 
     // 썸네일 이미지를 감싸는 a태그에 href속성을 설정해준다.
     $container.attr("href", detailUrl);
-    $col_product.addClass("col_product").attr({
-        src: productData,
-        style: "width: 206px; height:200px"
-    });
-    $container.append($col_product)
+    $col_product.addClass("col_product").attr("src", productData);
+    
 
     //네 번째 상품이면 오른쪽 마진을 없앤다
     if ($parent_row_product.children().length == COL_LENGTH - 1) {
@@ -59,7 +56,9 @@ var makeColProduct = function ($parent_row_product, productData) {
         console.log("last row has " + $parent_row_product.children().length + " cols. we need no margin col.");
 
     }
-    
+
+        
+    $container.append($col_product);
     $parent_row_product.append($container);
 }
 

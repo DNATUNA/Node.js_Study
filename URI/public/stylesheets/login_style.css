@@ -1,10 +1,10 @@
 .loginbox {
-    width: 380px;
+    width: 35%;
     height: 580px;
-    padding: 30px 60px;
+    padding: 3% 5%;
     border: 1px solid #bfbfbf;
     border-radius: 7px;
-    margin-left: 229px;
+    margin-left: 27.5%;
     margin-top: 100px;
     background-color: white;
 }
@@ -13,10 +13,11 @@
     text-align: center;
     font-style: italic;
     font-size: 25px;
-    height: 100px;
+    height: 90px;
     line-height: 35px;
     border-bottom: 1px solid #bfbfbf;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .id_pwd {
@@ -28,10 +29,10 @@
     display: block;
     border-radius: 8px;
     border: 1px solid #bfbfbf;
-    width: 340px;
+    width: 90%;
     height: 30px;
     margin-bottom: 20px;
-    padding: 5px 20px
+    padding: 5px 5%;
 }
 
 .id_pwd > input:focus,
@@ -43,16 +44,14 @@ textarea:focus {
 }
 
 .signin_botton {
-    height: 25px;
-    margin-bottom: 20px;
     float: right;
-    height: 25px;
-    width: 90px;
+    width: 25%;
+    height: 1.8rem;
     background-color: #ff9900;
     border-radius: 70px;
     color: white;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 20px;
     border: 0px;
     font-family: inherit;
 }
@@ -61,25 +60,20 @@ textarea:focus {
     box-shadow: 0px 0px 2px 1px #cbcbcb;
 }
 
-.signin_botton > div {
-    
-}
-
 .snsbox {
     height: 220px;
     padding: 20px 0;
 }
 
 .snsbox > a {
+    display: inline-block;
     position: relative;
-    width: 100%;
-    height: 40px;
-    margin-bottom: 20px;
+    width: 10%;
+    height: 15%;
     text-align: center;
     line-height: 40px;
     border-radius: 8px;
     font-weight: 500;
-    padding: 0px 20px;
     border: 0;
     font-family: inherit;
 }
@@ -88,13 +82,9 @@ textarea:focus {
     box-shadow: 0px 0px 2px 1px #cbcbcb;
 }
 
-.snsbox img {
-    width: 30px;
-    width: 30px;
-    position: absolute;
-    padding-left: 20px;
-    padding-top: 5px;
-    transform: translateX(-40px);
+.snsbox > a > img {
+    width: 90%;
+    height: 100%;
 }
 
 .kakao {
@@ -117,4 +107,10 @@ textarea:focus {
 
 .google>img {
     transform: translateX(-152px);
+}
+
+#to_signup {
+    text-align: end;
+    font-size: 15px;
+    color: #7b7b7b
 }
