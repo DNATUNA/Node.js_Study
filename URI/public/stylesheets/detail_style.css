@@ -74,15 +74,13 @@ a, a:link, a:visited, a:hover {
 }
 
 .content {
-  display: inline-block;
+  display: block;
   width: 55rem;
   height: 100%;
   margin: 0 auto;
   padding: 0.2% 0%;
   padding-left: 5.9463125rem;
   padding-right: 5.9463125rem;
-  margin-left: 25.2734375rem;
-  margin-right: 25.2734375rem;
   background-color: #f7f7f7;
 }
 
