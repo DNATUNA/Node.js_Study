@@ -144,7 +144,7 @@ a, a:link, a:visited, a:hover {
 .price {
     margin-top: 1%;
     font-style: italic;
-    font-size: 3.3%;
+    font-size: 2rem;
     font-weight: bold;
     color: #ff9900
 }
