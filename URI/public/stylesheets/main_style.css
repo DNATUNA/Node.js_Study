@@ -92,7 +92,7 @@ a, a:link, a:visited, a:hover {
     margin-right: 25px;
 }
 
-#buttonbox div {
+#buttonbox div > a {
     display: inline-block;
     margin: 5px 5px;
 }

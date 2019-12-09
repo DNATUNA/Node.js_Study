@@ -81,7 +81,7 @@ a, a:link, a:visited, a:hover {
   padding: 20px 0px;
 }
 
-#buttonbox div {
+#buttonbox div > a {
   display: inline-block;
   margin: 5px 5px;
 }
