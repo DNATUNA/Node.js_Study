@@ -56,13 +56,15 @@ html
                         ul.slider
                     .price(name = 'price')
                     .description(name = 'content')
-                    if user.user_id == posts.user.user_id
-                        
-                    else
-                        .tags_buy
-                            .tags(name = 'tag')
+                    .tags_buy
+                        .tags(name = 'tag')
+                        if user && user.user_id
+                            if user.user_id == posts.user.user_id 
+                            else
+                                .buy BUY
+                        else
                             .buy BUY
-                    .margins
+                .margins
 
             script.
 
