@@ -28,10 +28,9 @@ a, a:link, a:visited, a:hover {
     box-sizing: border-box;
 }
 
-#bodybox {
-    width: 1155px;
+.bodybox {
+    width: 100%;
     margin: 0 auto;
-    background-color: #fafafa;
 }
 
 .logo {
@@ -55,7 +54,8 @@ a, a:link, a:visited, a:hover {
     width: 800px;
     height: 100px;
     box-sizing: border-box;
-    padding: 15px 15px;
+    padding: 0px 15px;
+    padding-top: 30px;
 }
 
 .searchbox {
@@ -73,15 +73,21 @@ a, a:link, a:visited, a:hover {
 
 .content {
     display: inline-block;
-    width: 100%;
+    width: 50%;
     height: 100%;
     margin: 0 auto;
-    padding: 20px 0px;
-}
+    padding: 1.5% 0px;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-left: 21%;
+    margin-right: 21%;
+    background-color: f7f7f7;
+  }
 
 .row_product {
     display: block;
     height: 225px;
+    width: 100%;
 }
 
 .col_product {
@@ -89,7 +95,8 @@ a, a:link, a:visited, a:hover {
     background-color: cornsilk;
     height: 200px;
     width: 206px;
-    margin-right: 25px;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
 }
 
 #buttonbox div > a {

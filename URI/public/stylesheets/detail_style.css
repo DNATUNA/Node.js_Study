@@ -50,12 +50,13 @@ a, a:link, a:visited, a:hover {
   width: 800px;
   height: 100px;
   box-sizing: border-box;
-  padding: 15px 15px;
+  padding: 0px 15px;
+  padding-top: 30px;
 }
 
 .searchbox {
-  width: 500px;
-  height: 40px;
+  width: 448px;
+  height: 38px;
   border-radius: 20px;
   background-color: #f7f7f7;
   border: 1px solid #bfbfbf;
@@ -67,18 +68,22 @@ a, a:link, a:visited, a:hover {
 }
 
 
-#bodybox {
-    width: 899px;
+.bodybox {
+    width: 100%;
     margin: 0 auto;
-    background-color: #fafafa;
 }
 
 .content {
   display: inline-block;
-  width: 100%;
+  width: 47.5%;
   height: 100%;
   margin: 0 auto;
   padding: 20px 0px;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-left: 21.25%;
+  margin-right: 21.25%;
+  background-color: #f7f7f7;
 }
 
 #buttonbox div > a {

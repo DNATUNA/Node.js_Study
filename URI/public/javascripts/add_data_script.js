@@ -1,4 +1,4 @@
-var COL_LENGTH = 5; //한 행에 들어갈 상품 수
+var COL_LENGTH = 4; //한 행에 들어갈 상품 수
 var detailUrl = ""; //디테일 페이지 URL 주소
 
 

@@ -46,7 +46,7 @@ html
                                 else                 
                                     a(href='/auth') 로그인
                                     a(href='/auth/join') 회원가입
-            #bodybox
+            .bodybox
                 .content
                     .titlebox
                         .profile
@@ -56,12 +56,16 @@ html
                         ul.slider
                     .price(name = 'price')
                     .description(name = 'content')
-                    .tags_buy
-                        .tags(name = 'tag')
-                        .buy BUY
+                    if user.user_id == posts.user.user_id
+                        
+                    else
+                        .tags_buy
+                            .tags(name = 'tag')
+                            .buy BUY
                     .margins
 
             script.
+
                 $(document).ready(function () {
 
                     //페이지를 불러오면서 서버로부터 productData 데이터를 불러 와야할 것 같아요
