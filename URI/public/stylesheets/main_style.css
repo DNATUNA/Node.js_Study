@@ -38,14 +38,15 @@ a, a:link, a:visited, a:hover {
     display: inline-block;
     vertical-align: top;
     width: 300px;
-    height: 100px;
+    height: 80px;
     box-sizing: border-box;
     padding: 15px 15px;
+    padding-top: 35px;
 }
 
 .logo p {
     font-style: italic;
-    font-size: 30;
+    font-size: 30px;
 }
 
 .search {

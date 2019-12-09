@@ -5,7 +5,7 @@ html
         title #{title}
         link(rel='stylesheet' type='text/css' href='/stylesheets/resetCSS.css')
         link(href='https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean' rel='stylesheet')
-        link(rel='stylesheet' href='/stylesheets/main_style.css' type='text/css')
+        //- link(rel='stylesheet' href='/stylesheets/main_style.css' type='text/css')
         link(rel='stylesheet' href='/stylesheets/detail_style.css' type='text/css')
         script(src='http://code.jquery.com/jquery-3.1.1.js')
         link(rel='stylesheet' href='https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css')
@@ -19,30 +19,33 @@ html
             .headbox
                 .inheadbox
                     .logo
-                        p #WE ARE HERE
+                        a(href='/')
+                            p #WE ARE HERE
                     .search
                         form
                             input.searchbox(type='text' name='search' value='')
-                        if user && user.user_id               
-                            a(href='#' onclick='logout()') 로그아웃
-                            script.
-                                function logout(){
-                                    setTimeout("kakaoLogout()");
-                                    setTimeout("goHome()", 200);
-                                }
-                                function kakaoLogout(){
-                                    logout = window.open('https://accounts.kakao.com/logout?continue=https://accounts.kakao.com/weblogin/account ','logout',
-                                                'width=50,height=50,location=no,status=no,scrollbars=no,');
-                                                
-                                    setTimeout("logout.close()", 100);
-                                }
-                                function goHome(){
-                                    location.href = "http://127.0.0.1:3000/auth/logout";
-                                }
-                            a(href='/upload') 업로드
-                        else                 
-                            a(href='/auth') 로그인
-                            a(href='/auth/join') 회원가입
+                        #buttonbox
+                            div
+                                if user && user.user_id               
+                                    a(href='#' onclick='logout()') 로그아웃
+                                    script.
+                                        function logout(){
+                                            setTimeout("kakaoLogout()");
+                                            setTimeout("goHome()", 200);
+                                        }
+                                        function kakaoLogout(){
+                                            logout = window.open('https://accounts.kakao.com/logout?continue=https://accounts.kakao.com/weblogin/account ','logout',
+                                                        'width=50,height=50,location=no,status=no,scrollbars=no,');
+                                                        
+                                            setTimeout("logout.close()", 100);
+                                        }
+                                        function goHome(){
+                                            location.href = "http://127.0.0.1:3000/auth/logout";
+                                        }
+                                    a(href='/upload') 업로드
+                                else                 
+                                    a(href='/auth') 로그인
+                                    a(href='/auth/join') 회원가입
             #bodybox
                 .content
                     .titlebox

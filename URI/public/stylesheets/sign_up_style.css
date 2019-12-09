@@ -1,6 +1,7 @@
 .sign_up_box {
+    display: block;
     width: 380px;
-    height: 450px;
+    height: 600px;
     padding: 30px 60px;
     border: 1px solid #bfbfbf;
     border-radius: 7px;
@@ -10,8 +11,9 @@
 }
 
 .sign_up_botton {
-    height: 25px;
-    margin-bottom: 20px;
+    position: relative;
+    top: 130px;
+    margin-bottom: 0px;
     float: right;
     height: 25px;
     width: 90px;
@@ -19,7 +21,6 @@
     border-radius: 70px;
     color: white;
     text-align: center;
-    margin-bottom: 20px;
     border: 0px;
     font-family: inherit;
 }
@@ -28,7 +29,18 @@
     box-shadow: 0px 0px 2px 1px #cbcbcb;
 }
 
-.id_pwd {
+.sign_up {
+    display: block;
     height: 200px;
     padding: 20px 0;
+}
+
+.sign_up > input {
+    display: block;
+    border-radius: 8px;
+    border: 1px solid #bfbfbf;
+    width: 380px;
+    height: 30px;
+    margin-bottom: 20px;
+    padding: 5px 20px
 }
