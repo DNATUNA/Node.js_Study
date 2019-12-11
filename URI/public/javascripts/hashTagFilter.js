@@ -95,10 +95,10 @@ function deleteTagContainer(e) {
 function sendTagArray() {
     //ajax사용해서 json 형식으로 서버 선송
     var isSuccess = 0;
-
+    const tags = JSON.stringify(tagArray);
     $.ajax({
         url: '/search',
-        type: 'GET',
+        type: 'POST',
         dataType: 'json',
         data: {
             'search': tagArray

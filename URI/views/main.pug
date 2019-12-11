@@ -47,53 +47,43 @@ html
         .content
 
         script.
-          const posts = !{JSON.stringify(posts)};
-          //var postsLength = posts.length;
-          console.log(posts);  
-          $(document).ready(function () {
-              let idArray = new Array();
-              let srcArray = new Array();
-              //console.log(postsLength);
-              // posts가 배열이라는 뜻은 여러 개의 데이터가 넘어왔다는 소리
-              // posts가 배열이 아니라는 뜻은 한 개의 데이터가 넘어왔다는 소리
-              if(Array.isArray(posts)) {
-                // 각 게시물의 썸네일 이미지 URL을 srcArray 배열에 저장.
-                for(var i = 0 ; i < posts.length ; i++){
-                  srcArray.push("http://127.0.0.1:3000/img/"+posts[i].item_img.split(',', 1)); 
+          let posts = !{JSON.stringify(posts)};
+          const start = () =>{
+            $('.content').empty();
+            //var postsLength = posts.length;
+            console.log(posts);  
+            $(document).ready(function () {
+                let idArray = new Array();
+                let srcArray = new Array();
+                //console.log(postsLength);
+                // posts가 배열이라는 뜻은 여러 개의 데이터가 넘어왔다는 소리
+                // posts가 배열이 아니라는 뜻은 한 개의 데이터가 넘어왔다는 소리
+                if(Array.isArray(posts)) {
+                  // 각 게시물의 썸네일 이미지 URL을 srcArray 배열에 저장.
+                  for(var i = 0 ; i < posts.length ; i++){
+                    srcArray.push("http://127.0.0.1:3000/img/"+posts[i].item_img.split(',', 1)); 
+                  }
+                  
+                  // 각 게시물의 id값을 idArray 배열에 저장.
+                  for(var i = 0 ; i < posts.length ; i++){
+                    idArray.push(posts[i].id);
+                  }
+                } else {
+                  const post = posts.item_img.split(',');
+                  for(var i = 0; i < post.length - 1; i++){
+                    srcArray.push("http://127.0.0.1:3000/img/"+post[i]);
+                  }
+                  
+                  
+                  // 각 게시물의 id값을 idArray 배열에 저장.
+                    idArray.push(posts.id);
                 }
-                
-                // 각 게시물의 id값을 idArray 배열에 저장.
-                for(var i = 0 ; i < posts.length ; i++){
-                  idArray.push(posts[i].id);
-                }
-              } else {
-                const post = posts.item_img.split(',');
-                for(var i = 0; i < post.length - 1; i++){
-                  srcArray.push("http://127.0.0.1:3000/img/"+post[i]);
-                }
-                 
-                
-                // 각 게시물의 id값을 idArray 배열에 저장.
-                  idArray.push(posts.id);
-              }
-             
-              // 가데이터로 쓰자.
-              // srcArray.push("https://m.afrimo.net/web/product/tiny/201808/0c2cafd3a350042731e9e598565323c7.jpg");
-              // srcArray.push("http://m.jlauren.co.kr/web/product/big/201903/35394376998c8f6612cc7b240b7ecc4d.jpg");
-              // srcArray.push("http://image2.lotteimall.com/goods/02/93/95/1392959302_L.jpg");
-              //- srcArray.push("http://modmartin.co.kr/web/product/big/201503/155_shop1_297012.jpg");
-              //- srcArray.push("http://janecourt.com/web/product/big/201905/13b0ff1ea846fbd12d44aefe66a41816.jpg");
-              //- srcArray.push("http://t1.daumcdn.net/liveboard/bizion/9418dbf2817c48fca75ff46ba2a18bd1.JPG");
-              //- srcArray.push("http://m.3months.co.kr/web/product/big/201902/aabb44b090d0052a90f0b3b745183ba5.jpg");
-              //- srcArray.push("https://m.dorocy.co.kr/web/product/big/201712/13971_shop1_940108.jpg");
-              //- srcArray.push("http://m.sasimgoods.com/web/product/big/201902/5f7ee74b0f71f0b3ed571da0acbb6a9b.jpeg");
-              //- srcArray.push("https://cdn.imweb.me/upload/S2017082959a568197ba46/9e652f125375f.jpeg");
-              //- srcArray.push("http://m.im3.co.kr/web/product/big/201710/4995_shop1_483476.jpg");
-              //srcArray.push(imgUrl);
 
-          // 함수 addProduct : add_data_script.js에 존재.
-          for(var i = 0; i < srcArray.length; i++)
-              addProduct($('.content'), srcArray[i], idArray[i]);
-
-          });
+            // 함수 addProduct : add_data_script.js에 존재.
+            for(var i = 0; i < srcArray.length; i++)
+                addProduct($('.content'), srcArray[i], idArray[i]);
+            });
+          }
+          start();
+          
         
