@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const sequelize = require('sequelize');
+const Op = sequelize.Op;
 
 const { Item, User, Hashtag } = require('../models');
 
@@ -18,26 +20,38 @@ const makeArr = (jsonPasre) => {
     return arr;
 };
 
-router.post('/', async(req, res, next) => {    
+router.post('/', async(req, res, next) => {
     const jsonPasre = JSON.parse(req.body.search);
     let arr = await makeArr(jsonPasre);
 
-    try{
-        const posts = await Item.findAll(
-            { 
-                include: {
-                    model: Hashtag,
-                    where: {
-                        title: arr,
+    try {
+        if(arr.length == 0) {
+            const posts = await Item.findAll();
+            res.send({
+                title: 'WeAreHere 중고 & 플리마켓 SNS',
+                posts: posts,
+                user: req.user,
+            });
+        } else {
+            const posts = await Item.findAll(
+                { 
+                    include: {
+                        model: Hashtag,
+                        where: {
+                            title: {
+                                [Op.and]: arr,
+                            },
+                        },
                     },
-                },
-            }
-        );
-        res.render('main', {
-            title: 'WeAreHere 중고 & 플리마켓 SNS',
-            posts: posts,
-            user: req.user,
-        });
+                }
+            );
+            res.send({
+                title: 'WeAreHere 중고 & 플리마켓 SNS',
+                posts: posts,
+                user: req.user,
+            });
+        } 
+        
     } catch (error) {
         console.error(error);
       next(error);
