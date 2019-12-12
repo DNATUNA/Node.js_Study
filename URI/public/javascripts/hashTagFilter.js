@@ -107,7 +107,6 @@ function sendTagArray() {
             'search': tags
         },
         success: function (data) {
-            console.log(data.posts);
             let posts = data.posts;
             const start = () =>{
                 $('.content').empty();

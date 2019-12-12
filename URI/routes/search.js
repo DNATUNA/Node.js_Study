@@ -20,10 +20,25 @@ const makeArr = (jsonPasre) => {
     return arr;
 };
 
+const makeArrStr = (arr) => {
+    let arrStr = '';
+    for(let data of arr){
+        if(arrStr == ''){
+            arrStr = arrStr + data;
+        } else {
+            arrStr = arrStr + ',' + data;
+        }
+    }
+
+    return arrStr;
+}
+
 router.post('/', async(req, res, next) => {
     const jsonPasre = JSON.parse(req.body.search);
     let arr = await makeArr(jsonPasre);
+    let arrStr = await makeArrStr(arr);
 
+    console.log(arrStr);
     try {
         if(arr.length == 0) {
             const posts = await Item.findAll();
