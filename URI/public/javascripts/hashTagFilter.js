@@ -108,6 +108,7 @@ function sendTagArray() {
         },
         success: function (data) {
             let posts = data.posts;
+            console.log(posts);
             const start = () =>{
                 $('.content').empty();
                 //var postsLength = posts.length;

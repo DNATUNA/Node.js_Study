@@ -48,9 +48,7 @@ var addPicture = function (arr_picture) {
 }
 
 var setContect = function (str_contect) {
-    //buy 누르면 팝업으로 연락처 출력
-    //지금은 임시로 콘솔 로그
-    $('.buy').click(console.log(str_contect));
+    $('#contect').html("판매자 연락처<br>" + str_contect);
 }
 var setPrice =function(str_price) {
     $('.price').html(str_price + "￦");
@@ -67,4 +65,37 @@ var setTag = function(arr_tag) {
     }
     
     $('.tags').html(tags);
+}
+
+function layer_popup() {
+
+    //팝업 레이어
+    var $el = $('#buy-layer');
+
+    //팝업 말고는 흐리게
+    $('.dim-layer').fadeIn();
+
+    //중앙에 띄우기 위해 크기 얻음
+    var $elWidth = ~~($el.outerWidth()),
+        $elHeight = ~~($el.outerHeight()),
+        docWidth = $(document).width(),
+        docHeight = $(document).height();
+
+    // 화면의 중앙에 레이어를 띄운다.
+    if ($elHeight < docHeight || $elWidth < docWidth) {
+        $el.css({
+            marginTop: -$elHeight / 2,
+            marginLeft: -$elWidth / 2
+        })
+    } else {
+        $el.css({
+            top: 0,
+            left: 0
+        });
+    }
+
+    $('a.btn-layerClose').click(function () {
+        $('.dim-layer').fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
+        return false;
+    });
 }
