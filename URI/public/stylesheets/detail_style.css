@@ -1,7 +1,98 @@
+html,
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+}
+
+a, a:link, a:visited, a:hover {
+    text-decoration: none;
+    color: currentColor;
+}
+
+#wrap {
+    margin: 0 0;
+    width: 100%;
+}
+
+.headbox {
+    border-bottom: 1px solid #bfbfbf;
+    box-sizing: border-box;
+    min-height: 100px;
+}
+
+.inheadbox {
+    width: 1155px;
+    margin: 0 auto;
+    min-height: 100px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: top;
+  width: 300px;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 15px 15px;
+  padding-top: 35px;
+}
+
+
+.logo p {
+  font-style: italic;
+  font-size: 30px;
+}
+
+.search {
+  text-align: right;
+  display: inline-block;
+  width: 800px;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 0px 15px;
+  padding-top: 30px;
+}
+
+.searchbox {
+  width: 448px;
+  height: 38px;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #bfbfbf;
+  padding: 0 25px;
+}
+
+.searchbox:hover {
+  box-shadow: 1px 1px 2px 1px #e2e2e2;
+}
+
+
+.bodybox {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.content {
+  display: block;
+  width: 55rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0.2% 0%;
+  padding-left: 5.9463125rem;
+  padding-right: 5.9463125rem;
+  background-color: #f7f7f7;
+}
+
+#buttonbox div > a {
+  display: inline-block;
+  margin: 5px 5px;
+}
+
 .titlebox {
-    margin-top: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    margin-top: 5.531585352361987%;
+    height: 3.125rem;
+    margin-bottom: 1.106317070472397%;
 }
 
 .profile {
@@ -29,11 +120,12 @@
 }
 
 .picbox {
-    margin-top: 3px;
-    height: 899px;
+    margin-top: 0.3321891263425977%;
+    width: 100%;
+    height: 100%;
     background-color: #f6f6f6;
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 6.643782526851954%;
 }
 
 .bx-wrapper {
@@ -45,27 +137,28 @@
 }
 
 .picbox img {
-    width: 899px;
-    height: 899px;
+    width: 60rem;
+    height: 50rem;
 }
 
 .price {
-    margin-top: 7px;
+    margin-top: 1%;
     font-style: italic;
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: bold;
     color: #ff9900
 }
 
 .description {
     box-sizing: border-box;
-    padding: 10px 0;
+    font-size: 1.2rem;
+    padding: 1% 0%;
     line-height: 1.8;
 }
 
 .tags_buy {
-    height: 50px;
-    margin-top: 20px;
+    height: 3.125rem;
+    margin-top: 2.214594175617318%;
     padding: 0 0;
 }
 
@@ -95,4 +188,74 @@
 
 .buy:hover {
     box-shadow: 1px 1px 2px 1px #e2e2e2;
+}
+
+.pop-layer .pop-container {
+  padding: 20px 25px;
+}
+
+.pop-layer p {
+  color: #666;
+  line-height: 25px;
+    text-align: center;
+}
+
+.pop-layer .btn-r {
+  width: 100%;
+  margin: 10px 0 20px;
+  padding-top: 10px;
+  border-top: 1px solid #DDD;
+  text-align: right;
+}
+
+.pop-layer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 410px;
+  height: auto;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.dim-layer {
+  display: none;
+  position: fixed;
+  _position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.dim-layer .dimBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
+.dim-layer .pop-layer {
+  display: block;
+}
+
+a.btn-layerClose {
+  display: inline-block;
+  height: 25px;
+  padding: 0 25px 0;
+  background-color: #ff9900;
+    border-radius: 10px;
+  font-size: 13px;
+  color: #fff;
+  line-height: 25px;
+}
+
+a.btn-layerClose:hover {
+   box-shadow: 1px 1px 2px 1px #e2e2e2;
 }
