@@ -122,7 +122,7 @@ function sendTagArray() {
                     if(Array.isArray(posts)) {
                     // 각 게시물의 썸네일 이미지 URL을 srcArray 배열에 저장.
                     for(var i = 0 ; i < posts.length ; i++){
-                        srcArray.push("http://127.0.0.1:3000/img/"+posts[i].item_img.split(',', 1)); 
+                        srcArray.push("http://106.10.32.130:3000/img/"+posts[i].item_img.split(',', 1)); 
                     }
                     
                     // 각 게시물의 id값을 idArray 배열에 저장.
@@ -132,7 +132,7 @@ function sendTagArray() {
                     } else {
                     const post = posts.item_img.split(',');
                     for(var i = 0; i < post.length - 1; i++){
-                        srcArray.push("http://127.0.0.1:3000/img/"+post[i]);
+                        srcArray.push("http://106.10.32.130:3000/img/"+post[i]);
                     }
                     
                     

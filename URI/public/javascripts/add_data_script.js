@@ -6,7 +6,7 @@ var detailUrl = ""; //디테일 페이지 URL 주소
 var addProduct = function ($target_div, productData, idArray) { //상품 추가하는 함수
 
     // 디테일 페이지 URL를 detailUrl변수에 저장.
-    detailUrl = "http://127.0.0.1:3000/detail/" + idArray;
+    detailUrl = "http://106.10.32.130:3000/detail/" + idArray;
     
     //현재 페이지에 있는 상품 행의 개수를 검사
     var numOfChildren = $target_div.children().length;
