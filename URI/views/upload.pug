@@ -1,4 +1,3 @@
-doctype html
 html
     head
         meta(charset="utf-8")
@@ -9,18 +8,19 @@ html
         link(rel='stylesheet' href='/stylesheets/upload_style.css' type='text/css')
         script(src='http://code.jquery.com/jquery-3.1.1.js')
         script(src='/javascripts/upload_script.js')
-        
 
-    body 
+
+    body
         #wrap
             .headbox
                 .inheadbox
                     .logo
-                        p #WE ARE HERE
+                        a(href='/')
+                            p #WE ARE HERE
                     .search
-                        form    
+                        form
                             input.searchbox(type='text' name='search' value='')
-                            | 
+                            |
             #bodybox
                 .content
 
@@ -37,12 +37,9 @@ html
                             .form_line
                                 .form_caption 태그
                                 input(name = 'title' type = "text").form_tag
-                            input(type = "file" multiple name = "userfile").drop_caption   
-                            //- #drop
-                            //-     //- 제가 파일 드래그 앤 드롭 부분을 input으로 일단 바꿔놓음.
-                                
-                            //-     p.drop_caption 파일을 끌어와서 올리기 
-                            //-     #thumbnails
-                            //- 여기 부분이 원래 button이였는데 서버로 제출하기 위해서 input으로 바꾸고 type값을 submit으로 했습니다.
-                            input(type = 'submit' value = 'Upload').upload 
-                            | 
+                            #drop
+                              p.drop_caption 파일을 끌어와서 올리기
+                              #thumbnails
+                            #files
+                              input#file_upload.addinput(name='userfile', multiple='multiple', type='file')
+                            button.upload(type='submit') Upload

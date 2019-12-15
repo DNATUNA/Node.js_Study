@@ -1,92 +1,10 @@
-html,
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    margin: 0;
-}
-
-a, a:link, a:visited, a:hover {
-    text-decoration: none;
-    color: currentColor;
-}
-
-#wrap {
-    margin: 0 0;
-    width: 100%;
-}
-
-.headbox {
-    border-bottom: 1px solid #bfbfbf;
-    box-sizing: border-box;
-    min-height: 100px;
-}
-
-.inheadbox {
-    width: 1155px;
-    margin: 0 auto;
-    min-height: 100px;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
-
-.logo {
-  display: inline-block;
-  vertical-align: top;
-  width: 300px;
-  height: 80px;
-  box-sizing: border-box;
-  padding: 15px 15px;
-  padding-top: 35px;
-}
-
-
-.logo p {
-  font-style: italic;
-  font-size: 30px;
-}
-
-.search {
-  text-align: right;
-  display: inline-block;
-  width: 800px;
-  height: 100px;
-  box-sizing: border-box;
-  padding: 0px 15px;
-  padding-top: 30px;
-}
-
-.searchbox {
-  width: 448px;
-  height: 38px;
-  border-radius: 20px;
-  background-color: #f7f7f7;
-  border: 1px solid #bfbfbf;
-  padding: 0 25px;
-}
-
-.searchbox:hover {
-  box-shadow: 1px 1px 2px 1px #e2e2e2;
-}
-
-
-.bodybox {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.content {
-  display: block;
-  width: 55rem;
-  height: 100%;
-  margin: 0 auto;
-  padding: 0.2% 0%;
-  padding-left: 5.9463125rem;
-  padding-right: 5.9463125rem;
-  background-color: #f7f7f7;
-}
-
 #buttonbox div > a {
   display: inline-block;
   margin: 5px 5px;
+}
+
+.content {
+  height: auto;
 }
 
 .titlebox {
@@ -97,35 +15,32 @@ a, a:link, a:visited, a:hover {
 
 .profile {
     float: left;
-    width: 50px;
-    height: 50px;
-    margin-left: 10px;
-    border-radius: 75px;
+    width: 3.125rem;
+    height: 3.125rem;
+    margin-left: 0.625rem;
+    border-radius: 4.688rem;
     background-color: black;
 }
 
 .title {
     float: left;
-    width: 400px;
-    height: 50px;
-    margin-left: 10px;
+    width: 25rem;
+    height: 3.125rem;
+    margin-left: 0.625rem;
     box-sizing: border-box;
-    line-height: 50px;
+    line-height: 3.125rem;
 }
 
 .date {
     display: inline-block;
     float: right;
-    line-height: 70px;
+    line-height: 4.375rem;
 }
 
 .picbox {
-    margin-top: 0.3321891263425977%;
-    width: 100%;
-    height: 100%;
-    background-color: #f6f6f6;
+    margin-top: 0.1875rem;
     position: relative;
-    margin-bottom: 6.643782526851954%;
+    margin-bottom: 3.75rem;
 }
 
 .bx-wrapper {
@@ -163,48 +78,50 @@ a, a:link, a:visited, a:hover {
 }
 
 .margins {
-    border-top: 1px solid #bfbfbf;
-    height: 100px;
+    border-top: 0.0625rem solid #bfbfbf;
+    height: 6.25rem;
+    width: 56.19rem;
+    margin: 0 auto;
 }
 
 .tags {
     width: inherit;
     font-style: italic;
-    font-size: 25px;
+    font-size: 1.563rem;
     float: left;
 }
 
 .buy {
     float: right;
-    height: 35px;
-    width: 120px;
+    height: 2.188rem;
+    width: 7.5rem;
     background-color: #ff9900;
-    border-radius: 70px;
+    border-radius: 4.375rem;
     color: white;
-    font-size: 23px;
-    line-height: 35px;
+    font-size: 1.438rem;
+    line-height: 2.188rem;
     text-align: center;
 }
 
 .buy:hover {
-    box-shadow: 1px 1px 2px 1px #e2e2e2;
+    box-shadow: 0.0625rem 0.0625rem 0.125rem 0.0625rem #e2e2e2;
 }
 
 .pop-layer .pop-container {
-  padding: 20px 25px;
+  padding: 1.25rem 1.563rem;
 }
 
 .pop-layer p {
   color: #666;
-  line-height: 25px;
-    text-align: center;
+  line-height: 1.563rem;
+  text-align: center;
 }
 
 .pop-layer .btn-r {
   width: 100%;
-  margin: 10px 0 20px;
-  padding-top: 10px;
-  border-top: 1px solid #DDD;
+  margin: 0.625rem 0 20px;
+  padding-top: 0.625rem;
+  border-top: 0.0625rem solid #DDD;
   text-align: right;
 }
 
@@ -213,7 +130,7 @@ a, a:link, a:visited, a:hover {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 410px;
+  width: 40.625rem;
   height: auto;
   background-color: #fff;
   z-index: 10;
@@ -247,15 +164,15 @@ a, a:link, a:visited, a:hover {
 
 a.btn-layerClose {
   display: inline-block;
-  height: 25px;
-  padding: 0 25px 0;
+  height: 1.563rem;
+  padding: 0 1.563rem 0;
   background-color: #ff9900;
-    border-radius: 10px;
-  font-size: 13px;
+  border-radius: 0.625rem;
+  font-size: 0.8125rem;
   color: #fff;
-  line-height: 25px;
+  line-height: 1.563rem;
 }
 
 a.btn-layerClose:hover {
-   box-shadow: 1px 1px 2px 1px #e2e2e2;
+   box-shadow: 0.0625rem 0.0625rem 0.125rem 0.0625rem #e2e2e2;
 }
