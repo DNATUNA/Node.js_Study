@@ -1,122 +1,122 @@
 .uploadform {
-    width: 900px;
+    width: 56.25rem;
     height: auto;
-    min-height: 680px;
-    padding: 30px;
+    min-height: 42.5rem;
+    padding: 1.875rem;
 }
 
 .uploadform input,
 textarea {
     background-color: #f8f8f8;
-    border: 1px solid #bfbfbf;
-    border-radius: 7px;
-    margin-bottom: 20px;
-    transform: translateY(-3px);
-    padding: 5px 10px;
+    border: 0.0625rem solid #bfbfbf;
+    border-radius: 0.4375rem;
+    margin-bottom: 1.25rem;
+    transform: translateY(-0.1875rem);
+    padding: 0.3125rem 0.625rem;
 }
 
 .uploadform input:focus,
 textarea:focus {
     background-color: white;
-    border: 2px solid #ff9900;
-    box-shadow: 0px 0px 4px 1px #ff9900;
+    border: 0.125rem solid #ff9900;
+    box-shadow: 0 0 0.25rem 0.0625rem #ff9900;
 
 }
 
 .form_caption {
     display: inline-block;
-    width: 50px;
+    width: 3.125rem;
     vertical-align: top;
     font-weight: 100;
 }
 
 .form_title {
 
-    width: 400px;
-    height: 30px;
+    width: 25rem;
+    height: 1.875rem;
 
 }
 
 .form_description {
-    width: 750px;
-    height: 300px;
+    width: 46.88rem;
+    height: 18.75rem;
 
 }
 
 .form_price {
-    width: 150px;
-    height: 30px;
+    width: 9.375rem;
+    height: 1.875rem;
 }
 
 .form_tag {
-    width: 500px;
-    min-height: 30px;
+    width: 31.25rem;
+    min-height: 1.875rem;
 }
 
 #drop {
-    width: 800px;
+    width: 50rem;
     height: auto;
-    min-height: 200px;
-    border: 1px solid #bfbfbf;
+    min-height: 12.5rem;
+    border: 0.0625rem solid #bfbfbf;
     background-color: rgb(255, 248, 238);
 }
 
 .drop_caption {
     text-align: center;
-    line-height: 200px;
+    line-height: 12.5rem;
     color: #717171;
     display: hide;
 }
 
 .thumb {
-    width: 180px;
+    width: 11.25rem;
     height: auto;
-    padding: 10px;
+    padding: 0.625rem;
     display: inline-block;
     vertical-align: top;
 }
 
 .thumb > img {
-    padding-left: 10px;
-    padding-top: 10px;
-    width: 170px;
+    padding-left: 0.625rem;
+    padding-top: 0.625rem;
+    width: 10.63rem;
     height: auto;
 }
 
 .thumb > .close {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.625rem;
     background-color: dimgray;
     color: white;
     text-align: center;
-    font-size: 15px;
-    line-height: 20px;
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
     cursor: pointer;
 }
 
 .thumb > .close:hover {
-    width: 23px;
-    height: 23px;
-    border-radius: 15px;
-    line-height: 23px;
+    width: 1.438rem;
+    height: 1.438rem;
+    border-radius: 0.9375rem;
+    line-height: 1.438rem;
 }
 
 .upload {
     float: right;
-    margin-right: 35px;
-    height: 35px;
-    width: 120px;
+    margin-right: 2.188rem;
+    height: 2.188rem;
+    width: 7.5rem;
     background-color: #ff9900;
-    border-radius: 70px;
+    border-radius: 4.375rem;
     color: white;
-    font-size: 23px;
-    border: 0px;
-    margin-top: 30px;
+    font-size: 1.438rem;
+    border: 0;
+    margin-top: 1.875rem;
     font-family: inherit;
 }
 
 .upload:hover {
-    box-shadow: 1px 1px 2px 1px #e2e2e2;
+    box-shadow: 0.0625rem 0.0625rem 0.125rem 0.0625rem #e2e2e2;
 }
