@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  .timeline
+    form#join-form(action='/auth/join' method='post')
+      .input-group
+        label(for='join-name') 이름
+        input#join-name(type='text' name='name')
+      .input-group
+        label(for='join-id') 아이디
+        input#join-id(type='text' name='id')
+      .input-group
+        label(for='join-passwd') 비밀번호
+        input#join-passwd(type='password' name='passwd')
+      .input-group
+        label(for='join-email') 이메일
+        input#join-email(type='text' name='email')
+      .input-group
+        label(for='join-age') 나이
+        input#join-age(type='text' name='age')
+      .input-group
+        label(for='join-phone_num') 전화번호
+        input#join-phone_num(type='text' name='phone_num')
+      .input-group
+        label(for='join-store_name') 마켓 이름
+        input#join-store_name(type='text' name='store_name')
+      if joinError
+        .error-message= joinError
+      button#join-btn.btn(type='submit') 회원가입

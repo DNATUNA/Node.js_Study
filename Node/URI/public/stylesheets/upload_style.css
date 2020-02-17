@@ -1,0 +1,122 @@
+.uploadform {
+    width: 56.25rem;
+    height: auto;
+    min-height: 42.5rem;
+    padding: 1.875rem;
+}
+
+.uploadform input,
+textarea {
+    background-color: #f8f8f8;
+    border: 0.0625rem solid #bfbfbf;
+    border-radius: 0.4375rem;
+    margin-bottom: 1.25rem;
+    transform: translateY(-0.1875rem);
+    padding: 0.3125rem 0.625rem;
+}
+
+.uploadform input:focus,
+textarea:focus {
+    background-color: white;
+    border: 0.125rem solid #ff9900;
+    box-shadow: 0 0 0.25rem 0.0625rem #ff9900;
+
+}
+
+.form_caption {
+    display: inline-block;
+    width: 3.125rem;
+    vertical-align: top;
+    font-weight: 100;
+}
+
+.form_title {
+
+    width: 25rem;
+    height: 1.875rem;
+
+}
+
+.form_description {
+    width: 46.88rem;
+    height: 18.75rem;
+
+}
+
+.form_price {
+    width: 9.375rem;
+    height: 1.875rem;
+}
+
+.form_tag {
+    width: 31.25rem;
+    min-height: 1.875rem;
+}
+
+#drop {
+    width: 50rem;
+    height: auto;
+    min-height: 12.5rem;
+    border: 0.0625rem solid #bfbfbf;
+    background-color: rgb(255, 248, 238);
+}
+
+.drop_caption {
+    text-align: center;
+    line-height: 12.5rem;
+    color: #717171;
+    display: hide;
+}
+
+.thumb {
+    width: 11.25rem;
+    height: auto;
+    padding: 0.625rem;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.thumb > img {
+    padding-left: 0.625rem;
+    padding-top: 0.625rem;
+    width: 10.63rem;
+    height: auto;
+}
+
+.thumb > .close {
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.625rem;
+    background-color: dimgray;
+    color: white;
+    text-align: center;
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+    cursor: pointer;
+}
+
+.thumb > .close:hover {
+    width: 1.438rem;
+    height: 1.438rem;
+    border-radius: 0.9375rem;
+    line-height: 1.438rem;
+}
+
+.upload {
+    float: right;
+    margin-right: 2.188rem;
+    height: 2.188rem;
+    width: 7.5rem;
+    background-color: #ff9900;
+    border-radius: 4.375rem;
+    color: white;
+    font-size: 1.438rem;
+    border: 0;
+    margin-top: 1.875rem;
+    font-family: inherit;
+}
+
+.upload:hover {
+    box-shadow: 0.0625rem 0.0625rem 0.125rem 0.0625rem #e2e2e2;
+}

@@ -1,0 +1,52 @@
+doctype
+html
+  head
+    meta(charset='UTF-8')
+    title= title
+    meta(name='viewport' content='width=device-width, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    link(rel='stylesheet' href='stylesheets/main.css')
+  body
+    .container
+      .profile-wrap
+        .profile
+          if user && user.id
+            .user-name= '안녕하세요! ' + user.name + '님'
+            .half
+              div 팔로잉
+              .count.following-count= user.Followings && user.Followings.length || 0
+            .half
+              div 팔로워
+              .count.follower-count= user.Followers && user.Followers.length || 0
+            input#my-id(type='hidden' value=user.id)
+            a#my-profile.btn(href='/profile') 내 프로필
+            a#logout.btn(href='#' onclick='logout()') 로그아웃
+            script.
+              function logout(){
+                setTimeout("kakaoLogout()");
+                setTimeout("goHome()", 200);
+              }
+              function kakaoLogout(){
+                logout = window.open('https://accounts.kakao.com/logout?continue=https://accounts.kakao.com/weblogin/account ','logout',
+                            'width=50,height=50,location=no,status=no,scrollbars=no,');
+                            
+                setTimeout("logout.close()", 100);
+              }
+              function goHome(){
+                location.href = "http://127.0.0.1:3000/auth/logout";
+              }
+          else
+            form#login-form(action='/auth/login' method='post')
+              .input-group
+                label(for='join-id') 아이디
+                input#id(type='text' name='id' required autofocus)
+              .input-group
+                label(for='join-passwd') 비밀번호
+                input#passwd(type='password' name='passwd' required)
+              if loginError
+                .error-message= loginError
+              a#join.btn(href='/join') 회원가입
+              button#login.btn(type='submit') 로그인
+              a#kakao.btn(href='/auth/kakao') 카카오톡
+        footer
+      block content
