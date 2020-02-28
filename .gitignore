@@ -1,5 +1,12 @@
-*/node_modules
+# Nodejs packages ignore
 node_modules
 package-lock.json
+
+# dotenv enviroment ignore
 .env
+
+# sequelize enviroment ignore
 login/config/config.json
+
+# Typescript export folder
+dist
