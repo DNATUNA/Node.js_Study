@@ -1,0 +1,45 @@
+// 로그인 페이지
+html
+  head
+    meta(charset='UTF-8')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/resetCSS.css')
+    link(href='https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean', rel='stylesheet')
+    link(rel='stylesheet', href='/stylesheets/main_style.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/login_style.css', type='text/css')
+    script(src='http://code.jquery.com/jquery-3.1.1.js')
+    script(src='/javascripts/text_reset.js', type='text/javascript')
+    script(src='/javascripts/login_script.js', type='text/javascript')
+  body
+    #wrap
+      .headbox
+        .inheadbox
+          .logo
+            a(href='/')
+              p #WE ARE HERE
+          |
+          .search
+            form
+              input.searchbox(type='text', name='search', value='')
+      |
+      #bodybox
+        .content
+            .loginbox
+              .signin #Sign in
+              form(action='/auth/login', method='post')
+                  .id_pwd
+                    input(type='text', name='user_id', value='ID' required autofocus)
+                    input(type='password', name='passwd', value='PASSWORD' required)
+                  if loginError
+                    .error-message= loginError
+                  button.signin_botton(type='submit')
+                    div Sign in
+              .snsbox
+                  a(href='/auth/kakao')
+                    img(src='/img/kakao.png', alt='')
+                  a(href='#')
+                    // 페이스북 기능 개발 전입니다.
+                    img(src='/img/facebook.png', alt='')
+                  a(href='#')
+                    // 구글 기능 개발 전입니다.
+                    img(src='/img/google.png', alt='')
+            block content

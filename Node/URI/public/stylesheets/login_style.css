@@ -1,0 +1,117 @@
+.loginbox {
+    width: 23.75rem;
+    height: 36.25rem;
+    padding: 1.875rem 3.75rem;
+    border: 0.0625rem solid #bfbfbf;
+    border-radius: 0.4375rem;
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 6.25rem;
+}
+
+.signin {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.563rem;
+    height: 5.625rem;
+    line-height: 2.188rem;
+    border-bottom: 0.0625rem solid #bfbfbf;
+    margin-bottom: 1.875rem;
+    margin-top: 1.875rem;
+}
+
+.id_pwd {
+    height: 6.25rem;
+    padding: 1.25rem 0;
+}
+
+.id_pwd > input {
+    display: block;
+    border-radius: 0.5rem;
+    border: 0.0625rem solid #bfbfbf;
+    width: 23.75rem;
+    height: 2.5rem;
+    margin-bottom: 1.25rem;
+    padding: 0.3125rem 1.25rem;
+    box-sizing: border-box;
+}
+
+.id_pwd > input:focus,
+textarea:focus {
+    background-color: white;
+    border: 0.125rem solid #ff9900;
+    box-shadow: 0px 0px 0.25rem 0.0625rem #ff9900;
+}
+
+.signin_botton {
+    float: right;
+    width: 5.625rem;
+    height: 1.563rem;
+    background-color: #ff9900;
+    border-radius: 4.375rem;
+    color: white;
+    text-align: center;
+    margin-top: 1.25rem;
+    border: 0px;
+    font-family: inherit;
+}
+
+.signin_botton:hover {
+    box-shadow: 0px 0px 0.125rem 0.0625rem #cbcbcb;
+}
+
+.snsbox {
+    height:  13.75rem;
+    padding: 1.25rem 0;
+}
+
+.snsbox > a {
+    display: inline-block;
+    position: relative;
+    width: 10%;
+    height: 15%;
+    text-align: center;
+    line-height: 2.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    border: 0;
+    font-family: inherit;
+    margin: 0 0.3125rem;
+}
+
+.snsbox > a:hover {
+    box-shadow: 0px 0px 0.125rem 0.0625rem #cbcbcb;
+}
+
+.snsbox > a > img {
+    width: 90%;
+    height: 100%;
+}
+
+.kakao {
+    background-color: #fae100;
+}
+
+.facebook {
+    background-color: #3a5ca9;
+    color: white;
+}
+
+.facebook>img {
+    transform: translateX(-130.5rem);
+}
+
+.google {
+    background-color: #f53e28;
+    color: white;
+}
+
+.google>img {
+    transform: translateX(-150.125rem);
+}
+
+#to_signup {
+    text-align: end;
+    font-size: 10.3125rem;
+    color: #7b7b7b
+}

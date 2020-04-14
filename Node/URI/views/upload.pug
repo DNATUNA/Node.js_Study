@@ -1,0 +1,45 @@
+html
+    head
+        meta(charset="utf-8")
+        title upload
+        link(rel='stylesheet' type='text/css' href='/stylesheets/resetCSS.css')
+        link(href='https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean' rel='stylesheet')
+        link(rel='stylesheet' href='/stylesheets/main_style.css' type='text/css')
+        link(rel='stylesheet' href='/stylesheets/upload_style.css' type='text/css')
+        script(src='http://code.jquery.com/jquery-3.1.1.js')
+        script(src='/javascripts/upload_script.js')
+
+
+    body
+        #wrap
+            .headbox
+                .inheadbox
+                    .logo
+                        a(href='/')
+                            p #WE ARE HERE
+                    .search
+                        form
+                            input.searchbox(type='text' name='search' value='')
+                            |
+            #bodybox
+                .content
+
+                    form(action = "/upload" method = "post" enctype = "multipart/form-data").uploadform
+                            .form_line
+                                .form_caption 제목
+                                input(name = 'item_name' type = "text").form_title
+                            .form_line
+                                .form_caption 가격
+                                input(name = 'item_price' type = "text").form_price
+                            .form_line
+                                .form_caption 내용
+                                textarea(name = 'item_description').form_description
+                            .form_line
+                                .form_caption 태그
+                                input(name = 'title' type = "text").form_tag
+                            #drop
+                              p.drop_caption 파일을 끌어와서 올리기
+                              #thumbnails
+                            #files
+                              input#file_upload.addinput(name='userfile', multiple='multiple', type='file')
+                            button.upload(type='submit') Upload

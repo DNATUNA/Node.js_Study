@@ -1,0 +1,130 @@
+html,
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+}
+
+a, a:link, a:visited, a:hover {
+    text-decoration: none;
+    color: currentColor;
+}
+
+#wrap {
+    margin: 0 0;
+    width: 100%;
+}
+
+.headbox {
+    border-bottom: 0.0625rem solid #bfbfbf;
+    box-sizing: border-box;
+    min-height: 6.25rem;
+}
+
+.inheadbox {
+    width: 71.88rem;
+    margin: 0 auto;
+    min-height: 6.25rem;
+    padding: 0 0.9375rem;
+    box-sizing: border-box;
+}
+
+#bodybox {
+    width: 71.88rem;
+    margin: 0 auto;
+    background-color: #fafafa;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 18.75rem;
+    height: 6.25rem;
+    box-sizing: border-box;
+    padding: 0.9375rem 0.9375rem;
+}
+
+.logo p {
+    font-style: italic;
+    font-size: 1.875rem;
+}
+
+.search {
+    text-align: right;
+    display: inline-block;
+    width: 50rem;
+    height: 6.25rem;
+    box-sizing: border-box;
+    padding: 0.9375rem 0.9375rem;
+}
+
+.searchbox {
+    width: 31.25rem;
+    height: 2.5rem;
+    border-radius: 1.25rem;
+    background-color: #f7f7f7;
+    border: 0.0625rem solid #bfbfbf;
+    padding: 0 1.563rem;
+}
+
+.searchbox:hover {
+    box-shadow: 0.0625rem 0.0625rem 0.125rem 0.0625rem #e2e2e2;
+}
+
+.content {
+    width: 56.19rem;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1.25rem 0;
+}
+
+.row_product {
+    display: block;
+    height: 14.06rem;
+    width: 100%;
+}
+
+.col_product {
+    float: left;
+    background-color: cornsilk;
+    height: 12.5rem;
+    width: 12.5rem;
+    margin-right: 1.5rem;
+}
+
+#buttonbox div > a {
+    display: inline-block;
+    margin: 0.3125rem 0.3125rem;
+}
+
+#tagbox {
+    text-align: end;
+    margin: 0.3125rem 0.625rem;
+}
+
+#tagbox div {
+    display: inline-block;
+    padding: 0.125rem 0.625rem;
+    margin: 0 0.3125rem;
+    border: 0.0625rem solid #bfbfbf;
+    border-radius: 0.625rem;
+    background-color: #f7f7f7
+}
+
+#tagbox .close {
+    display: inline-block;
+    width: 0.9375rem;
+    height: 0.9375rem;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 0.9375rem;
+    line-height: 0.9375rem;
+    cursor: pointer;
+}
+
+/* .product {
+    width: 206px;
+    height: 200px;
+    background-color: burlywood;
+} */

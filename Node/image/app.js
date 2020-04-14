@@ -24,7 +24,7 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use('/image', express.static('uploads')); // 이미지 url 주소 예시 ) 127.0.0.1:3000/image/chohee.jpg
+app.use('/img', express.static('uploads')); // 이미지 url 주소 예시 ) 127.0.0.1:3000/img/chohee.jpg
 
 app.use(cookieParser('sdfsdfsdf'));
 app.use(session({

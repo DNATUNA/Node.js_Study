@@ -1,0 +1,178 @@
+#buttonbox div > a {
+  display: inline-block;
+  margin: 5px 5px;
+}
+
+.content {
+  height: auto;
+}
+
+.titlebox {
+    margin-top: 5.531585352361987%;
+    height: 3.125rem;
+    margin-bottom: 1.106317070472397%;
+}
+
+.profile {
+    float: left;
+    width: 3.125rem;
+    height: 3.125rem;
+    margin-left: 0.625rem;
+    border-radius: 4.688rem;
+    background-color: black;
+}
+
+.title {
+    float: left;
+    width: 25rem;
+    height: 3.125rem;
+    margin-left: 0.625rem;
+    box-sizing: border-box;
+    line-height: 3.125rem;
+}
+
+.date {
+    display: inline-block;
+    float: right;
+    line-height: 4.375rem;
+}
+
+.picbox {
+    margin-top: 0.1875rem;
+    position: relative;
+    margin-bottom: 3.75rem;
+}
+
+.bx-wrapper {
+    -moz-box-shadow: 0 0 0 #ccc;
+    -webkit-box-shadow: 0 0 0 #ccc;
+    box-shadow: 0 0 0 #ccc;
+    border: 0 solid #fff;
+    background: #fff;
+}
+
+.picbox img {
+    width: 60rem;
+    height: 50rem;
+}
+
+.price {
+    margin-top: 1%;
+    font-style: italic;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff9900
+}
+
+.description {
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    padding: 1% 0%;
+    line-height: 1.8;
+}
+
+.tags_buy {
+    height: 3.125rem;
+    margin-top: 2.214594175617318%;
+    padding: 0 0;
+}
+
+.margins {
+    border-top: 0.0625rem solid #bfbfbf;
+    height: 6.25rem;
+    width: 56.19rem;
+    margin: 0 auto;
+}
+
+.tags {
+    width: inherit;
+    font-style: italic;
+    font-size: 1.563rem;
+    float: left;
+}
+
+.buy {
+    float: right;
+    height: 2.188rem;
+    width: 7.5rem;
+    background-color: #ff9900;
+    border-radius: 4.375rem;
+    color: white;
+    font-size: 1.438rem;
+    line-height: 2.188rem;
+    text-align: center;
+}
+
+.buy:hover {
+    box-shadow: 0.0625rem 0.0625rem 0.125rem 0.0625rem #e2e2e2;
+}
+
+.pop-layer .pop-container {
+  padding: 1.25rem 1.563rem;
+}
+
+.pop-layer p {
+  color: #666;
+  line-height: 1.563rem;
+  text-align: center;
+}
+
+.pop-layer .btn-r {
+  width: 100%;
+  margin: 0.625rem 0 20px;
+  padding-top: 0.625rem;
+  border-top: 0.0625rem solid #DDD;
+  text-align: right;
+}
+
+.pop-layer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40.625rem;
+  height: auto;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.dim-layer {
+  display: none;
+  position: fixed;
+  _position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.dim-layer .dimBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
+.dim-layer .pop-layer {
+  display: block;
+}
+
+a.btn-layerClose {
+  display: inline-block;
+  height: 1.563rem;
+  padding: 0 1.563rem 0;
+  background-color: #ff9900;
+  border-radius: 0.625rem;
+  font-size: 0.8125rem;
+  color: #fff;
+  line-height: 1.563rem;
+}
+
+a.btn-layerClose:hover {
+   box-shadow: 0.0625rem 0.0625rem 0.125rem 0.0625rem #e2e2e2;
+}
