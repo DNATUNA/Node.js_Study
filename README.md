@@ -1,25 +1,15 @@
-# Node 개발을 할 때 도움이 되는 도서관입니다.
+# Node 개발을 할 때 도움이 되는 레포입니다.
 
-> 모든 프로젝트에 민감한 데이터가 포함된 파일이나 node_modules은 올리지 않았습니다. 각 프로젝트마다 별도로 알리겠습니다.
+> Javascript와 Typescript를 사용해 Node 공부를 했습니다.
 
-## login 기능 (2019.11.05 ~ )
+## Javascript + Node.js
 
-### .gitignore
-- node_modules
-- package-lock.json
-- .env
-- login/config/config.json
+1. [login](./Javascript/login/login.md)
+2. [image](./Javascript/image/image.md)
+3. [URI](./Javascript/URI/URI.md)
+4. [GraphQL_Study](./Javascript/GraphQL_Study/GraphQL_Study.md)
 
-### 사용 패키지
-- express : 미들웨어
-- express-session
-- sequelize
-- mysql2
-- bcrypt
-- passport
-- passport-local
-- passport-kakao
-- morgan
-- pug
-- dotenv
-- connet-flash
+## Typescript + Node.js
+
+1. [Express_MVC_generator](./Typescript/Express_MVC_generator/Express_MVC_generator.md)
+2. [Express_MVC_USED_routing-controllers](./Typescript/Express_MVC_USED_routing-controllers/Express_MVC_USED_routing-controllers.md)
